@@ -14,7 +14,7 @@
 
 4. **Skype Interview - Round 3** - At this round the interviewer evaluated the program done on the pervious round and gave some other programs to solve same in Ruby.
 
-- The interviewer would have tested whether the candidate are able to define what they have learnt.
+- The interviewer would have tested whether the candidate are able to define what they have learned.
 
 5. **Skype Interview - Round 4** - It was of around 3 hour interview.I was given on sequence to print by identifying its logic.Similarly another question were also given which has a sequential pattern to follow and print in pyramid structure and asked to make modifications in program for different output they gave.
 
