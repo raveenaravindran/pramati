@@ -23,6 +23,6 @@
 6. **HR Interview** - I was asked to introduce myself first.Then I was asked to give clarification for all points I have mentioned in my resume.They also asked some puzzles.
 
    - The interviewer would have analysed the candidates analytic skills by asking puzzles.
-   - Also Could have checked the confident level of a candidate from the answers given by them.
+   - Also could have checked the confident level of a candidate from the answers given by them.
 
 
