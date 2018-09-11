@@ -10,9 +10,9 @@ It allows developers to easily collaborate, they can download a new version of t
 
 ## Install
 To Install Github,need to download github first and then install it by using the command "sudo apt install git" in terminal.
-	sudo - superuser do,it asks root permission
-	apt - advance packaging tool,its a package manager.If used with install,it allows to 		      install the package
-	install - install the package
+- sudo - superuser do,it asks root permission
+- apt - advance packaging tool,its a package manager.If used with install,it allows to 		      install the package
+-install - install the package
 we can install more packages by seperating them by commas.
 
 	
