@@ -1,6 +1,6 @@
 ### Interview Experience - Pramati
 
-1. **Hackerrank Online Test** - It was given two programs to solve in 1 hr 30 minutes.The question were based on String concantenation and array related questions.
+1. **HackerRank Online Test** - It was given two programs to solve in 1 hr 30 minutes.The question were based on String concantenation and array related questions.
 
 2. **Skype Interview Round 1** - Interviewer asked to do two programs to print patterns,sorting array by removing duplicate elements.
 
