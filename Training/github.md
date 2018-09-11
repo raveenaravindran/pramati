@@ -26,5 +26,5 @@ After installing create an github account.Then create a new repository.Along wit
 3. **git pull origin master** - Get all the data inside the repository.
 4. **git commit -m "commit message"** - To commit all changes to the remote repository.
 5. **git add filename** - To add file to the remote repository.
-6. **git push origin master** - To push all the committed datas or modifications to the remote repository 
+6. **git push origin master** - To push all the committed datas or modifications to the remote repository.
 7. **git remote set-url origin [repo-url]** - We will create 'origin' if it doesnt exist.We can use the set-url subcommand to edit an existing remote.
