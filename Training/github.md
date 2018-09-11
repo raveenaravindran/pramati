@@ -18,7 +18,7 @@ we can install more packages by seperating them by commas.
 
 After installing create an github account.Then create a new repository.Along with it create local repository too.
 
-##Github Commands and its uses
+## Github Commands and its uses
 
 1. git init - It is used to initialize the git.
 2. git remote add origin "link in github" - To specify which remote directory is to be used.When we run this code a new remote created named origin.
