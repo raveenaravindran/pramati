@@ -10,8 +10,6 @@ To create a markdown file use extension **.md** or **.markdown**
 
 1. **Headers**
 	we can use **'#'** for giving headings.The number of '#' determines the size of heading.
-	for # it represents <h1> tag.
-	for #### it represents <h4> tag.
 
 2. **Emphasis** 
    - **Italics** - To make certain text in italics,give the text inside *<Text to be shown in Italics> * .
