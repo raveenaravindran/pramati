@@ -119,7 +119,8 @@ GROUP BY m.name having COUNT(DISTINCT d.name)>1;
 
 ```SELECT d.name,COUNT(distinct m.name) 
 FROM employee e,employee m,dept d 
-WHERE e.mgr_id=m.emp_id and m.dept_id=d.dept_id 
+WHERE e.mgr_id=m.emp_id 
+AND m.dept_id=d.dept_id 
 GROUP BY d.name 
 HAVING COUNT(DISTINCT m.name)>=2;
 ```
