@@ -40,8 +40,8 @@ AND a.joining_date>'01-01-2013'
 GROUP BY b.name 
 HAVING count(a.name) >=2;
 ```
-```SELECT b.name AS Mgr_Name F
-ROM employee a, employee b 
+```SELECT b.name AS Mgr_Name 
+FROM employee a, employee b 
 WHERE b.emp_id = a.mgr_id 
 AND a.joining_date>'01-01-2013' 
 GROUP BY b.name 
@@ -54,7 +54,8 @@ HAVING count(a.name) >=2;
 FROM employee e,dept d  
 WHERE d.dept_id=e.dept_id 
 AND e.joining_date>'01-01-2013' 
-GROUP BY d.name;```
+GROUP BY d.name;
+```
 
 **5) Dept Name, Min(emp salary) where manager start date is after 2013**
 
