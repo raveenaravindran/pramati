@@ -165,7 +165,7 @@ AND dept_id + 1 < (select MAX(dept_id) from dept) ;
 
 **2. Manager Name, Reportee who joined first (Reportee Name - doj), Reportee who draws less sal (Reportee Name - salary) - window function**
 
-```
+- ```
 SELECT a.name,a.doj AS "Reportee Name - doj",b.sal AS "Reportee Name - salary"
 FROM
     (SELECT b.name,CONCAT(a.name,'-',a.joining_date) AS doj 
@@ -192,7 +192,7 @@ INNER JOIN (
 ON a.name=b.name;
 ```
 
-```
+- ```
 SELECT m1.Manager_name,m1.jd,m2.sd
 FROM
     (SELECT DISTINCT m2.name AS Manager_name,
