@@ -163,3 +163,52 @@ WHERE dept_id + 1 NOT IN (SELECT DISTINCT dept_id FROM dept)
 AND dept_id + 1 < (select MAX(dept_id) from dept) ;
 ```
 
+**2. Manager Name, Reportee who joined first (Reportee Name - doj), Reportee who draws less sal (Reportee Name - salary) - window function**
+
+```
+SELECT a.name,a.doj AS "Reportee Name - doj",b.sal AS "Reportee Name - salary"
+FROM
+    (SELECT b.name,CONCAT(a.name,'-',a.joining_date) AS doj 
+     FROM employee a,employee b
+     WHERE b.emp_id=a.mgr_id 
+     AND EXISTS(
+         SELECT 1
+         FROM employee a_inr
+         WHERE a_inr.mgr_id=b.emp_id
+         HAVING min(a_inr.joining_date)=a.joining_date
+         ) 
+) a
+INNER JOIN (
+    SELECT b.name,CONCAT(a.name,'-',a.salary) AS sal	
+    FROM employee a,employee b
+    WHERE b.emp_id=a.mgr_id
+    AND EXISTS(
+             SELECT 1
+             FROM employee a_inr
+             WHERE a_inr.mgr_id=b.emp_id
+             HAVING min(a_inr.salary)=a.salary     
+             )
+) b
+ON a.name=b.name;
+```
+
+```
+SELECT m1.Manager_name,m1.jd,m2.sd
+FROM
+    (SELECT DISTINCT m2.name AS Manager_name,
+     FIRST_VALUE(CONCAT(m1.name,'-',m1.joining_date)) OVER(
+     PARTITION BY m1.mgr_id
+     ORDER BY m1.joining_date) AS jd
+     FROM employee m1, employee m2
+     WHERE m2.emp_id=m1.mgr_id
+    )m1 
+INNER JOIN
+    (SELECT DISTINCT m2.name AS Manager_name,
+     FIRST_VALUE(CONCAT(m1.name,'-',m1.salary)) OVER ( 
+     PARTITION BY m1.mgr_id 
+     ORDER BY m1.salary) AS sd 
+     FROM employee m1, employee m2 
+     WHERE m2.emp_id=m1.mgr_id
+    )m2
+ON m1.Manager_name=m2.Manager_name;
+```
