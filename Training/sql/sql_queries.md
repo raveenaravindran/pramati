@@ -394,9 +394,10 @@ Assume, if above data is as commented, then there is no missing as there is no g
 salary_history
 
 id,name,start_date,end_date,salary
+
 1,Aneesh,2010,2011,1000
 
-1,Aneesh,2011,2012,1100--1,Aneesh,2011,2014,1100
+1,Aneesh,2011,2012,1100 -- 1,Aneesh,2011,2014,1100
 
 1,Aneesh,2014,2015,1200
 
