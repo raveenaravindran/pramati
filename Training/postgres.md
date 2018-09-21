@@ -7,10 +7,10 @@ PostgreSQL is a powerful, open source object-relational database system that use
 
 - Default Admin Login:
  ```
-   sudo -u postgres psql -U postgres
+   sudo -u postgres psql -U postgres;
  ```
  ```
-  sudo -u postgres psql
+  sudo -u postgres psql;
  ``` 
 - Describe a table - 
 ```
@@ -23,10 +23,6 @@ PostgreSQL is a powerful, open source object-relational database system that use
  - Create a superuser user:
  ```
    CREATE USER username SUPERUSER WITH PASSWORD 'myPassword' ;
- ```  
- - Describe a table
- ```
-   \d table_name
  ```
  - Grant privilages to user
  ```
@@ -39,5 +35,14 @@ PostgreSQL is a powerful, open source object-relational database system that use
    table_constraint table_constraint
    );
  ```
-   List the column name, its data type, and column constraint. 
+ List the column name, its data type, and column constraint. 
+ 
+ - To insert values
+ ```
+ INSERT INTO TABLE_NAME (column1, column2, column3,...columnN)
+VALUES (value1, value2, value3,...valueN);
+ ```
+ ```
+ INSERT INTO TABLE_NAME VALUES (value1,value2,value3,...valueN);
+ ```
 
