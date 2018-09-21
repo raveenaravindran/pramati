@@ -45,6 +45,6 @@ PostgreSQL is a powerful, open source object-relational database system that use
   VALUES (value1, value2, value3,...valueN);
  ```
  ```
- INSERT INTO TABLE_NAME VALUES (value1,value2,value3,...valueN);
+  INSERT INTO TABLE_NAME VALUES (value1,value2,value3,...valueN);
  ```
 
