@@ -291,7 +291,8 @@ SELECT *
 FROM generate_series (
 		(SELECT MIN(dept_id) FROM dept),
 		(SELECT MAX(dept_id) FROM dept)
-	) AS sn
+	) 
+AS sn
 LEFT JOIN dept 
 ON dept.dept_id = sn
 WHERE dept_id IS NULL;
@@ -358,3 +359,92 @@ INNER JOIN
     )m2
 ON m1.Manager_name=m2.Manager_name;
 ```
+
+```
+SELECT DISTINCT
+	M . NAME AS mgr_name,
+	FIRST_VALUE (e. NAME) OVER (
+		PARTITION BY M .emp_id
+		ORDER BY
+			e.joining_date
+	) AS first_emp_name,
+	FIRST_VALUE (e.joining_date) OVER (
+		PARTITION BY M .emp_id
+		ORDER BY
+			e.joining_date
+	) AS first_doj,
+	FIRST_VALUE (e. NAME) OVER (
+		PARTITION BY M .emp_id
+		ORDER BY
+			e.salary
+	) AS least_sal_emp_name,
+	FIRST_VALUE (e.salary) OVER (
+		PARTITION BY M .emp_id
+		ORDER BY
+			e.salary
+	) AS least_salary
+FROM
+	employee e
+INNER JOIN employee M ON e.mgr_id = M .emp_id
+```
+
+**3. Find the list of employee records WHERE salary data is missing.With the above example, we don’t have salary information FROM 2012 to 2014.
+Assume, if above data is as commented, then there is no missing as there is no gap** 
+
+salary_history
+id,name,start_date,end_date,salary
+1,Aneesh,2010,2011,1000
+1,Aneesh,2011,2012,1100--1,Aneesh,2011,2014,1100
+1,Aneesh,2014,2015,1200
+1,Aneesh,2015,null,1200
+
+```
+SELECT CONCAT(a.i,'-',b.i) AS Missing_Data
+FROM
+(
+SELECT i 
+FROM generate_series(
+                   (SELECT MIN(start_date) 
+                   FROM sh),
+                   (SELECT MAX(start_date) 
+                   FROM sh)) AS t(i)
+WHERE NOT EXISTS(
+                 SELECT 1 
+                 FROM sh
+                 WHERE sh.start_date=t.i)
+) a
+
+INNER JOIN (
+SELECT i 
+FROM generate_series(
+                   (SELECT MIN(end_date) 
+                   FROM sh),
+                   (SELECT MAX(end_date) 
+                   FROM sh)) AS t(i)
+WHERE NOT EXISTS(
+                 SELECT 1 
+                 FROM sh
+                 WHERE sh.end_date=t.i)
+)b
+
+ON  b.i-a.i>1;
+```
+```
+
+SELECT * 
+FROM (
+     SELECT
+     sh.start_date,
+     sh.end_date,
+     LEAD (start_date, 1) 
+     OVER (ORDER BY start_date) 
+     AS next_start_date
+FROM sh
+ORDER BY start_date)t 
+WHERE next_start_date-end_date > 0
+
+```
+
+## SET - 4
+
+
