@@ -30,12 +30,15 @@ PostgreSQL is a powerful, open source object-relational database system that use
  ```  
  - Create table
  ```
-   CREATE TABLE table_name (
-   column_name TYPE column_constraint,
-   table_constraint table_constraint
-   );
+   CREATE TABLE table_name(
+   column1 datatype,
+   column2 datatype,
+   column3 datatype,
+   .....
+   columnN datatype,
+   PRIMARY KEY( one or more columns )
+);
  ```
- List the column name, its data type, and column constraint. 
  
  - To insert values
  ```
