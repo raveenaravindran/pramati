@@ -1,6 +1,6 @@
-# POSTGRESQL
+## POSTGRESQL
 
-## COMMANDS
+### COMMANDS
 
 - Default Admin Login:
   - sudo -u postgres psql -U postgres
