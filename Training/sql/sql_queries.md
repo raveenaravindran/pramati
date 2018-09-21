@@ -269,8 +269,44 @@ WHERE b.emp_id = a.mgr_id )>2;
 ```
 SELECT  dept_id +1
 FROM dept
-WHERE dept_id + 1 NOT IN (SELECT DISTINCT dept_id FROM dept)
-AND dept_id + 1 < (select MAX(dept_id) from dept) ;
+WHERE dept_id + 1 NOT IN 
+   (SELECT DISTINCT dept_id 
+    FROM dept)
+AND dept_id + 1 < (SELECT MAX(dept_id) from dept) ;
+```
+
+```
+SELECT generate_series(
+                  (SELECT MIN(dept_id) 
+                   FROM dept),
+                  (SELECT MAX(dept_id) 
+                   FROM dept)) 
+AS MissingID 
+EXCEPT SELECT dept_id 
+FROM dept ORDER BY MissingID ;
+```
+
+```
+SELECT *
+FROM generate_series (
+		(SELECT MIN(dept_id) FROM dept),
+		(SELECT MAX(dept_id) FROM dept)
+	) AS sn
+LEFT JOIN dept 
+ON dept.dept_id = sn
+WHERE dept_id IS NULL;
+
+```
+```
+WITH RECURSIVE series AS (
+	SELECT 1 AS rn
+	UNION ALL
+		SELECT rn + 1 AS rn
+		FROM series
+		WHERE rn < 10
+) 
+SELECT *
+FROM series;
 ```
 
 **2. Manager Name, Reportee who joined first (Reportee Name - doj), Reportee who draws less sal (Reportee Name - salary) - window function**
