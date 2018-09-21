@@ -12,8 +12,10 @@ PostgreSQL is a powerful, open source object-relational database system that use
  ```
   sudo -u postgres psql
  ``` 
-- Describe a table - \d tablename
-
+- Describe a table - 
+```
+  \d tablename
+```
 - Create new user:
 ```
   CREATE USER username WITH PASSWORD 'myPassword';
@@ -31,11 +33,11 @@ PostgreSQL is a powerful, open source object-relational database system that use
    GRANT ALL PRIVILAGES ON DATABASE database_name TO user_name;
  ```  
  - Create table
-   ```
+ ```
    CREATE TABLE table_name (
    column_name TYPE column_constraint,
    table_constraint table_constraint
    );
-   ```
+ ```
    List the column name, its data type, and column constraint. 
 
