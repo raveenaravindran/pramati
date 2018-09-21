@@ -392,10 +392,14 @@ INNER JOIN employee M ON e.mgr_id = M .emp_id
 Assume, if above data is as commented, then there is no missing as there is no gap** 
 
 salary_history
+
 id,name,start_date,end_date,salary
 1,Aneesh,2010,2011,1000
+
 1,Aneesh,2011,2012,1100--1,Aneesh,2011,2014,1100
+
 1,Aneesh,2014,2015,1200
+
 1,Aneesh,2015,null,1200
 
 ```
