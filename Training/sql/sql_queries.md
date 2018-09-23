@@ -298,17 +298,7 @@ ON dept.dept_id = sn
 WHERE dept_id IS NULL;
 
 ```
-```
-WITH RECURSIVE series AS (
-	SELECT 1 AS rn
-	UNION ALL
-		SELECT rn + 1 AS rn
-		FROM series
-		WHERE rn < 10
-) 
-SELECT *
-FROM series;
-```
+
 
 **2. Manager Name, Reportee who joined first (Reportee Name - doj), Reportee who draws less sal (Reportee Name - salary) - window function**
 
@@ -391,7 +381,7 @@ INNER JOIN employee M ON e.mgr_id = M .emp_id
 **3. Find the list of employee records WHERE salary data is missing.With the above example, we don’t have salary information FROM 2012 to 2014.
 Assume, if above data is as commented, then there is no missing as there is no gap** 
 
-salary_history
+TABLE - salary_history
 
 id,name,start_date,end_date,salary
 
