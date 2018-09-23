@@ -267,15 +267,6 @@ WHERE b.emp_id = a.mgr_id )>2;
 **1. SQL to find the missing ids from dept**
 
 ```
-SELECT  dept_id +1
-FROM dept
-WHERE dept_id + 1 NOT IN 
-   (SELECT DISTINCT dept_id 
-    FROM dept)
-AND dept_id + 1 < (SELECT MAX(dept_id) from dept) ;
-```
-
-```
 SELECT generate_series(
                   (SELECT MIN(dept_id) 
                    FROM dept),
