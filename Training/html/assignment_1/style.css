@@ -34,8 +34,7 @@
 	color : green;
 }
 
-.span
-{ 
+.span{ 
 	font-size : 14px;
 }
 
@@ -56,20 +55,20 @@
 	border-right : 1px dashed gray;
 	float : left;
 	width : 30%;
-	padding : 1em;
+	padding : 0.6em;
 }
 
 .right_col{
 
 	float : left;
 	width : 30%;
-	padding : 1em;
+	padding : 0.6em;
 }
 
 .middle_col{
 	border: 5px solid #BDB76B;
 	background-color: #F5F5F5;
-	padding : 1em;
+	padding : 0.6em;
 	width : 30%;
   float : right;
 }
