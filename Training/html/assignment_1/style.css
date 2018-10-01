@@ -19,9 +19,9 @@
    }
 
 .border{
-	border-color: gray gray;
-	border-style: dashed;
-	border-width: 1px 0 1px 0;
+	border-color : gray gray;
+	border-style : dashed;
+	border-width : 1px 0 1px 0;
 	padding : 9px;
 	margin : 1px;
 }
