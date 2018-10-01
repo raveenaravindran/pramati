@@ -14,8 +14,8 @@
 }
 
 .responsive {
-   height : auto;
-   width : 100%;
+	height : auto;
+	width : 100%;
    }
 
 .border{
@@ -59,7 +59,6 @@
 }
 
 .right_col{
-
 	float : left;
 	width : 30%;
 	padding : 0.6em;
@@ -70,7 +69,7 @@
 	background-color: #F5F5F5;
 	padding : 0.6em;
 	width : 30%;
-  float : right;
+	float : right;
 }
 
 .nav_link{  
@@ -88,8 +87,7 @@
 	color : black;
 	text-decoration : none;
 }
-.idea_link{   
-
+.idea_link{
 	padding-right : 20px;   
 	padding-left : 20px;   
 	border-right : 1px solid black;
@@ -107,8 +105,7 @@
 .right_align{
 	float : right;
 	padding-top : 4px;
-	color : black;
-	
+	color : black;	
 }
 
 .a_tag{
@@ -119,11 +116,11 @@
 }
 
 .list_style{
-	width :  70%;
-	text-align :  center;
-	padding-bottom :  4px;
-	list-style-image :  url('bullet.png');
-	}
+	width : 70%;
+	text-align : center;
+	padding-bottom : 4px;
+	list-style-image : url('bullet.png');
+}
 
 .paragraph{
 	padding-top : -20px;
