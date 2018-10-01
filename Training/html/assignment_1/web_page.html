@@ -1,122 +1,72 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>
-HTML and CSS
-</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-</head>
+  <head>
+  <title>
+  HTML and CSS
+  </title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+	<body>
+		<div class="overflow">
+			<div class="logo"><img src="logo.png"></div> 
+			<div class="icon_sprite">
+				<img src="icon_sprite.png">
+			</div>
+			<br>
+			<div class="text1">
+					<a class="a1" href="">home</a>|
+					<a class="a2" href="">about</a>|
+					<a class="a3" href="">idea</a>
+			</div>
+		</div>
 
-<body>
+		<div class="border1">
+			<img src="banner_image.jpg" class="responsive">
+		</div>
 
-<div>
-   <div class="logo"><img src="logo.png"></div> 
-   <div class="icon_sprite"><img src="icon_sprite.png">
-   <br>
-   <p><a href="">home</a>&nbsp;&nbsp; |&nbsp; &nbsp;<a href="">idea</a>&nbsp;&nbsp; |&nbsp; &nbsp;<a href="">about </a></p>
-</div>
+		<div class="border2">
+			<b class="bold">Why HTML and CSS?</b>
+			<br>
+			<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+			</span>
+		</div>
 
-<br>
-<br>
-<br>
-<br>	
-<hr style = "border-top:1px dashed lightgray">
-<img src="banner_image.jpg" class="responsive">
-<hr style = "border-top:1px dashed lightgray">
-</div>
-
-
-<br>
-<b style="color:green">Why HTML and CSS?</b>
-<br>
-<p><font size="2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-</font></p>
-</div>
-
-<div class="hlinetop">
-<br>
-<div class="row">
-   <div class="columnhl" style="border-right: 1px dashed lightgray">
-      <b style="color:green">Learn HTML</b>
-      <br>
-      <p>
-      <font size="2">
-       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, <span id = "dots">...</span> <span id ="more"> and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
-      
-      </p>
-      <a onclick="myFunction()" id="myBtn" style = "float:right"><u><b>read more</b></u></a>
-      <!-- <p align="right"><a href="_blank" target="_blank">read more</a></p> -->
-      </font>
-   </div>
-   <div class="columnhl" style="border-right: 1px dashed lightgray">
-      <b style="color:green">Learn CSS</b>
-      <br>
-      <p>
-      <font size="2">
-      CSS (Cascading Style Sheets) is used to style and lay out web pages,to alter the font, colour, size and spacing of your content, split it into multiple columns, or add animations and other decorative features. This module gets you started on the path to CSS mastery with the basics of how it works, including selectors and properties<span id = "dots1">...</span> <span id ="more1">, writing CSS rules, applying CSS to HTML, how to specify length, colour, and other units in CSS, cascade and inheritance, and debugging CSS.</span>
-   
-   </p>
-   <a onclick="myFunction1()" id="myBtn1" style = "float:right"><u><b>read more</b></u></a>
-   <!-- <p align="right"><a href="_blank" target="_blank">read more</a></p> --> 
-   </font>
-   </div>
-   <div class="columnhl" >
-      <b style="color:green">Why SEO?</b>
-      <br>
-      <font size="2">
-      <p>
-SEO, or search engine optimization, is the process by which people take to make sure that the websites are appealing to the search engines. Even though techniques can vary depending on your industry, the main idea is to make sure the basic white hat tactics are followed on a regular basis.The higher a website ranks for keywords, the more traffic you will receive. The more keywords your website ranks for and the higher they rank, the more often your brand is visible to potential customers.
-      
-      </p>
-      <ul style="list-style-type:square">
-	  <li>List item one</li>
-	  <li>List item two</li>
-	  <li>List item three</li>
-          <li>List item four</li>
-      </ul>
-      </font>  
-   </div>
-</div>
-</div>
-
-<script>
-function myFunction() {
-var dots = document.getElementById("dots");
-var moreText = document.getElementById("more");
-var btnText = document.getElementById("myBtn");
-
-if (dots.style.display === "none") {
-dots.style.display = "inline";
-btnText.innerHTML = "Read more"; 
-moreText.style.display = "none";
-} else {
-dots.style.display = "none";
-btnText.innerHTML = "Read less"; 
-moreText.style.display = "inline";
-}
-}
-function myFunction1() {
-var dots = document.getElementById("dots1");
-var moreText = document.getElementById("more1");
-var btnText = document.getElementById("myBtn1");
-
-if (dots.style.display === "none") {
-dots.style.display = "inline";
-btnText.innerHTML = "Read more"; 
-moreText.style.display = "none";
-} else {
-dots.style.display = "none";
-btnText.innerHTML = "Read less"; 
-moreText.style.display = "inline";
-}
-}
-</script>
-
-<div class="hlinetop" align="right">
-<font size="2">
-<p><a href="home.html" target="_blank">home</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="home.html" target="_blank">about</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="home.html" target="_blank">idea</a></p> 
-</font>
-</div>
-
-</body>
+		<div class="all">
+			<div class="c1">
+				<b class="bold">Learn HTML</b>
+				<br>
+				<span>
+				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.
+				<br>
+				<b><a href=""><span class="right">read more</span></a></b>
+				<span>
+			</div>
+			<div class="c2">
+				<b class="bold">Learn CSS</b>
+				<br>
+				<span>
+				CSS (Cascading Style Sheets) is used to style and lay out web pages,to alter the font, colour, size and spacing of your content, split it into multiple columns, or add animations and other decorative features. This module gets you started on the path to CSS mastery with the basics of how it works, including selectors and properties, writing CSS rules, applying CSS to HTML, how to specify length, colour, and other units in CSS, cascade and inheritance, and debugging CSS.</span>
+			<b><a href=""><span class="right">read more</span></a></b>
+			</div>
+			<div class="c3">
+				<b class="bold">Why SEO?</b>
+				<br>
+				<span>
+				SEO, or search engine optimization, is the process by which people take to make sure that the websites are appealing to the search engines. Even though techniques can vary depending on your industry, the main idea is to make sure the basic white hat tactics are followed on a regular basis.The higher a website ranks for keywords, the more traffic you will receive.</span>
+			<br>
+			<list>				
+			<li>List item 1</li>
+			<li>List item 2</li>
+			<li>List item 3</li>
+			<li>List item 4</li>
+			</list>			
+			</div>
+		</div>
+		<div>
+			<span class="right">
+				<a href=" ">home</a> | <a  href=" ">about</a> | <a  href=" ">idea</a>
+			</span>
+			<br>
+		</div>
+	</body>
 </html>
