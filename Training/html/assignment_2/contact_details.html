@@ -1,98 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-	  <title>Assignment 2</title>
-	  <meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1">	
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-	  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js">
-		</script>
-	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
-		<script src="contact_details.js"></script> 
-	</head>
-	<body>
-	  	<div class="container">
-			<form id="contact_form">
-				<h2>Contact Information</h2><br>
-				<div class="form-group">
-					<div class="row">
-						<div class="col-sm-4">
-							<label for="fname">First Name:</label>
-						</div>
-					 	<div class="col-sm-4">
-							<input type="text" class="form-control" id="fname" name="fname" placeholder="first name" onkeyup="javascript:capitalize_name(this.id, this.value);" onchange="onchange_fname()"/>
-							<span id="fname_error" style="color:red"></span>
-						</div>		
-					</div>
-				</div>
-
-				<div class="form-group">
-					<div class="row">
-						<div class="col-sm-4">
-							<label for="fname">Last Name:</label>
-						</div>
-						<div class="col-sm-4">
-							<input type="text" class="form-control" id="lname" name="lname" placeholder="last name" onkeyup="javascript:capitalize_name(this.id, this.value);" onchange="onchange_lname()"/>
-							<span id="lname_error" style="color:red"></span>
-						</div>
-					</div>	
-				</div>
-
-				<div class="form-group">
-					<div class="row">
-						<div class="col-sm-4">
-							<label for="email">Email:</label>
-						</div>
-						<div class="col-sm-4">
-							<input type="email" class="form-control" id="email" name="email" placeholder="Enter email" onchange="onchange_email()"/>
-							<span id="email_error" style="color:red"></span>
-						</div>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<div class="row">
-						<div class="col-sm-4">
-							<label class="control-label" for="date">Date:</label>
-						</div>
-						<div class="col-sm-4">
-							<input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" onchange="onchange_dob()"/>
-							<span id="dob_error" style="color:red"></span>
-						</div>
-					</div>	
-				</div>
-
-				<div class="form-group">
-					<div class="row">
-						<div class="col-sm-4">
-							<label for="phone no">Phone no:</label>
-						</div>
-						<div class="col-sm-4">
-							<input type="text" class="form-control" id="phone" name="phone" placeholder="phone no" onchange="onchange_phone()">
-							<span id="phone_error" style="color:red"></span>
-						</div>
-					</div>	
-				</div>
-
-				<div align="center">	
-					<button type="button" class="btn btn-default" onclick="contact_details()">submit</button>	
-				</div>  
-
-				<h4>Contact Information Table</h4>
-
-				<table id="contact_info" class="table table-bordered">
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>Email</th>
-					<th>Date of Birth</th>
-					<th>Phone Number</th>
-					<tbody>
-					</tbody>
-				</table>
-			</form>
-		</div>
-	</body>
+  <head>
+    <title>Assignment 2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+    <script src="contact_details.js"></script> 
+  </head>
+  <body>
+    <div class="container">
+      <form id="contact_form">
+        <h2>Contact Information</h2>
+        <br>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-4">
+              <label for="fname">First Name:</label>
+            </div>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="fname" name="fname" placeholder="first name" onkeyup="javascript:capitalize_name(this.id, this.value);" onchange="onchange_fname()"/>
+              <span id="fname_error" style="color:red"></span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-4">
+              <label for="fname">Last Name:</label>
+            </div>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="lname" name="lname" placeholder="last name" onkeyup="javascript:capitalize_name(this.id, this.value);" onchange="onchange_lname()"/>
+              <span id="lname_error" style="color:red"></span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-4">
+              <label for="email">Email:</label>
+            </div>
+            <div class="col-sm-4">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" onchange="onchange_email()"/>
+              <span id="email_error" style="color:red"></span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-4">
+              <label class="control-label" for="date">Date:</label>
+            </div>
+            <div class="col-sm-4">
+              <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" onchange="onchange_dob()"/>
+              <span id="dob_error" style="color:red"></span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-4">
+              <label for="phone no">Phone no:</label>
+            </div>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="phone" name="phone" placeholder="phone no" onchange="onchange_phone()">
+              <span id="phone_error" style="color:red"></span>
+            </div>
+          </div>
+        </div>
+        <div align="center">	
+          <button type="button" class="btn btn-default" onclick="contact_details()">submit</button>	
+        </div>
+        <h4>Contact Information Table</h4>
+        <table id="contact_info" class="table table-bordered">
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Date of Birth</th>
+          <th>Phone Number</th>
+          <tbody>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </body>
 </html>
