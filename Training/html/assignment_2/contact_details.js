@@ -1,6 +1,6 @@
 //Submit function
-function contact_details() {
-
+function contact_details() 
+{
 	var f_name  = document.getElementById("fname").value;
 	var l_name   = document.getElementById("lname").value;
 	var email_id = document.getElementById("email").value;
@@ -11,27 +11,27 @@ function contact_details() {
 		
 	if(user=contact_form.fname.value == "")
 		{
-			document.getElementById("fname_error").innerHTML="First name cannot be blank";
+			document.getElementById("fname_error").innerHTML = "First name cannot be blank";
 		}
 	if(user=contact_form.lname.value == "")
 		{
-			document.getElementById("lname_error").innerHTML="Last name cannot be blank";
+			document.getElementById("lname_error").innerHTML = "Last name cannot be blank";
 		}
 	if(user=contact_form.email.value == "")
 		{
-			document.getElementById("email_error").innerHTML="Email cannot be blank";
+			document.getElementById("email_error").innerHTML = "Email cannot be blank";
 		}
 	if(user=contact_form.date.value == "")
 		{
-			document.getElementById("dob_error").innerHTML="DOB cannot be blank";
+			document.getElementById("dob_error").innerHTML = "DOB cannot be blank";
 		}
 	if(user=contact_form.phone.value == "")
 		{
-			document.getElementById("phone_error").innerHTML="Phone number cannot be blank";
-		}
+			document.getElementById("phone_error").innerHTML = "Phone number cannot be blank";
+		} 
 
-	if (f_name && l_name && email_id && dob && phone){
-		
+	if (f_name && l_name && email_id && dob && phone)
+	{	
 		flag=0;
 		var row=table.insertRow(1);
 		var cell1=row.insertCell(0);
