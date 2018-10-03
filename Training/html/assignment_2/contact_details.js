@@ -1,5 +1,5 @@
 //Submit function
-function contact_details() {
+function contactDetails() {
   var f_name = document.getElementById("fname").value;
   var l_name = document.getElementById("lname").value;
   var email_id = document.getElementById("email").value;
@@ -55,7 +55,7 @@ function contact_details() {
       flag = 1;
     }
 
-    if (validate_email(email_id)) {
+    if (validateEmail(email_id)) {
       cell3.innerHTML = email_id;
       flag = 1;
     } else {
@@ -63,7 +63,7 @@ function contact_details() {
       flag = 0;
     }
     cell4.innerHTML = dob;
-    if (validate_phone(phone)) {
+    if (validatePhone(phone)) {
       cell5.innerHTML = phone;
       flag = 1;
     } else {
@@ -79,7 +79,7 @@ function contact_details() {
 }
 
 // Function to capitalise first letter
-function capitalize_name(textboxid, str) {
+function capitalizeName(textboxid, str) {
   if (str && str.length >= 1) {
     var firstChar = str.charAt(0);
     var remainingStr = str.slice(1);
@@ -103,35 +103,35 @@ $(document).ready(function () {
 })
 
 //Email validation
-function validate_email(email_id) {
+function validateEmail(email_id) {
   var pattern = new RegExp(/^([a-zA-Z]+[\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/);
   return pattern.test(email_id);
 }
 
 //Phone number validation
-function validate_phone(phone) {
+function validatePhone(phone) {
 
   var ph_pattern = new RegExp(/^([6-9]+[\d]{9})?$/);
   return ph_pattern.test(phone);
 }
 
 // onchange functions
-function onchange_fname() {
+function onchangeFname() {
   document.getElementById("fname_error").innerHTML = " ";
 }
 
-function onchange_lname() {
+function onchangeLname() {
   document.getElementById("lname_error").innerHTML = " ";
 }
 
-function onchange_email() {
+function onchangeEmail() {
   document.getElementById("email_error").innerHTML = " ";
 }
 
-function onchange_dob() {
+function onchangeDate() {
   document.getElementById("dob_error").innerHTML = " ";
 }
 
-function onchange_phone() {
+function onchangePhone() {
   document.getElementById("phone_error").innerHTML = " ";
 }

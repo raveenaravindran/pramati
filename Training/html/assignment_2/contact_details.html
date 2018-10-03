@@ -23,7 +23,7 @@
               <label for="fname">First Name:</label>
             </div>
             <div class="col-sm-4">
-              <input type="text" class="form-control" id="fname" name="fname" placeholder="first name" onkeyup="javascript:capitalize_name(this.id, this.value);" onchange="onchange_fname()"/>
+              <input type="text" class="form-control" id="fname" name="fname" placeholder="first name" onkeyup="javascript:capitalizeName(this.id, this.value);" onchange="onchangeFname()"/>
               <span id="fname_error" style="color:red"></span>
             </div>
           </div>
@@ -34,7 +34,7 @@
               <label for="fname">Last Name:</label>
             </div>
             <div class="col-sm-4">
-              <input type="text" class="form-control" id="lname" name="lname" placeholder="last name" onkeyup="javascript:capitalize_name(this.id, this.value);" onchange="onchange_lname()"/>
+              <input type="text" class="form-control" id="lname" name="lname" placeholder="last name" onkeyup="javascript:capitalizeName(this.id, this.value);" onchange="onchangeLname()"/>
               <span id="lname_error" style="color:red"></span>
             </div>
           </div>
@@ -45,7 +45,7 @@
               <label for="email">Email:</label>
             </div>
             <div class="col-sm-4">
-              <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" onchange="onchange_email()"/>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" onchange="onchangeEmail()"/>
               <span id="email_error" style="color:red"></span>
             </div>
           </div>
@@ -56,7 +56,7 @@
               <label class="control-label" for="date">Date:</label>
             </div>
             <div class="col-sm-4">
-              <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" onchange="onchange_dob()"/>
+              <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" onchange="onchangeDate()"/>
               <span id="dob_error" style="color:red"></span>
             </div>
           </div>
@@ -67,13 +67,13 @@
               <label for="phone no">Phone no:</label>
             </div>
             <div class="col-sm-4">
-              <input type="text" class="form-control" id="phone" name="phone" placeholder="phone no" onchange="onchange_phone()">
+              <input type="text" class="form-control" id="phone" name="phone" placeholder="phone no" onchange="onchangePhone()">
               <span id="phone_error" style="color:red"></span>
             </div>
           </div>
         </div>
         <div align="center">	
-          <button type="button" class="btn btn-default" onclick="contact_details()">submit</button>	
+          <button type="button" class="btn btn-default" onclick="contactDetails()">submit</button>	
         </div>
         <h4>Contact Information Table</h4>
         <table id="contact_info" class="table table-bordered">
