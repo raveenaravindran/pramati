@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,12 +11,12 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
-    <script src="contact_details.js"></script> 
+    <script src="contact_details.js"></script>
   </head>
   <body>
     <div class="container">
       <h2 class="panel text-center">Assignment 2</h2>
-      <form id="contact_form">
+      <form id="contact_form1" name="contact_form">
         <div class="panel panel-primary">
           <div class="panel-heading">
             <h1 class="panel-title text-center">					
@@ -29,8 +30,8 @@
                 <label for="fname">First Name:</label>
               </div>
               <div class="col-sm-4">
-                <input type="text" class="form-control" id="fname" name="fname" placeholder="First name" onkeyup="javascript:capitalizeName(this.id, this.value);" onchange="onchangeFname()" autocomplete = "off"/>
-                <span id="fname_error" class="text-danger"></span>
+                <input type="text" class="form-control" id="fname" name="fname" placeholder="First name" required/>
+                <span id="error" class="text-danger"></span>
               </div>
             </div>
           </div>
@@ -40,8 +41,8 @@
                 <label for="fname">Last Name:</label>
               </div>
               <div class="col-sm-4">
-                <input type="text" class="form-control" id="lname" name="lname" placeholder="Last name" onkeyup="javascript:capitalizeName(this.id, this.value);" onchange="onchangeLname()" autocomplete = "off"/>
-                <span id="lname_error" class="text-danger"></span>
+                <input type="text" class="form-control" id="lname" name="lname" placeholder="Last name" required/>
+                <span id="error" class="text-danger"></span>
               </div>
             </div>
           </div>
@@ -51,19 +52,19 @@
                 <label for="email">Email:</label>
               </div>
               <div class="col-sm-4">
-                <input type="email" class="form-control" id="email" name="email" placeholder="Email" onchange="onchangeEmail()"/>
-                <span id="email_error" class="text-danger"></span>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required/>
+                <span id="error" class="text-danger"></span>
               </div>
             </div>
           </div>
           <div class="panel-body">
             <div class="row">
               <div class="col-sm-4">
-                <label class="control-label" for="date">Date:</label>
+                <label class="control-label" for="date">Date of Birth:</label>
               </div>
               <div class="col-sm-4">
-                <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" onchange="onchangeDate()"/>
-                <span id="dob_error" class="text-danger"></span>
+                <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text" required/>
+                <span id="error" class="text-danger"></span>
               </div>
             </div>
           </div>
@@ -73,13 +74,14 @@
                 <label for="phone no">Phone no:</label>
               </div>
               <div class="col-sm-4">
-                <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone Number" onchange="onchangePhone()">
-                <span id="phone_error" class="text-danger"></span>
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone Number" required>
+                <span id="error" class="text-danger"></span>
               </div>
             </div>
           </div>
           <div align="center">	
-            <button type="button" class="btn btn-default" onclick="contactDetails()">submit</button>	
+            <button type="button" class="btn btn-default" onclick="submitValues()">submit</button>	
+            <button type="button" class="btn btn-default" onClick="this.form.reset()">Clear</button>
           </div>
           <br>
         </div>
@@ -99,7 +101,7 @@
             </tbody>
           </table>
         </div>
-    	</div>
+    </div>
     </form>
     </div>
   </body>
