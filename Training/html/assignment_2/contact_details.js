@@ -2,10 +2,11 @@
 
 $(document).ready(function () {
 
-  $("#datepicker").datepicker({
+  $("#date").datepicker({
     format: 'mm-dd-yyyy',
     endDate: '+0d',
     autoclose: true
+		
   });
 
   $("#fname").keyup(function () {
@@ -72,9 +73,23 @@ function submitValues() {
   var table_content = "<tr><td>" + capitalizeLetter(fname) + "</td><td>" + capitalizeLetter(lname) + "</td><td>" + email + "</td><td>" + dob + "</td><td>" + phone + "</td></tr>";
   $("#contact_info").append(table_content);
 
-  document.getElementById("userForm").reset();
+  $("#userForm")[0].reset();
+
+	$("#fname").rules("remove", "required");
+  $("#lname").rules("remove", "required");
+  $("#email").rules("remove", "required");
+	$("#phone").rules("remove", "required");
+
 }
 
+/*function change(){
+  $("#fname").rules("remove", "required");
+  $("#lname").rules("remove", "required");
+  $("#email").rules("remove", "required");
+	$("#phone").rules("remove", "required");
+	
+	
+}*/
 
 function capitalizeLetter(name) {
   str = name.split(" ");
