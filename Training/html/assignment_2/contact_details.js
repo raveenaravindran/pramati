@@ -1,57 +1,62 @@
-$(document).ready(function() {
 
-	$("#fname").keyup(function () {
- 		$('#fname').css('textTransform', 'capitalize');
-	});
 
-	$("#lname").keyup(function () {
+$(document).ready(function () {
+
+  $("#datepicker").datepicker({
+    format: 'mm-dd-yyyy',
+    endDate: '+0d',
+    autoclose: true
+  });
+
+  $("#fname").keyup(function () {
+    $('#fname').css('textTransform', 'capitalize');
+  });
+
+  $("#lname").keyup(function () {
     $('#lname').css('textTransform', 'capitalize');
   });
-	
-	$.validator.addMethod("email", function(value, element)
-		{
-		return this.optional(element) || /^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,5}$/i.test(value);
-		}, "Please enter a valid email address.");
-	
-	$.validator.addMethod("phone", function (value, element) {
-		  return this.optional(element) || /^([6-9]+[\d]{9})?$/i.test(value);
-	}, "Please enter valid phone number.");
+
+  $.validator.addMethod("email", function (value, element) {
+    return this.optional(element) || /^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,4}$/i.test(value);
+  }, "Please enter a valid email address.");
+
+  $.validator.addMethod("phone", function (value, element) {
+    return this.optional(element) || /^[6-9]{1}[0-9]{9}$/.test(value);
+  }, "Please enter valid phone number.");
 
 
   $("#userForm").validate({
-      rules: {
-          fname: "required",
-					lname: "required",
-          email: {
-              required: true,
-              email: true
-          },
-          phone: {
-              required: true,
-							phone:true,
-              
-							
-          },
-					date: {
-              required: true,
-          },
-          
+    rules: {
+      fname: "required",
+      lname: "required",
+      email: {
+        required: true,
+        email: true
       },
-      messages: {
-          fname: "This field is required",
-					lname: "This field is required",
-          email:  {
-              required: "This field is required",
-              email: "Please enter valid email address"
-          },
-          phone: {
-              required: "This field is required",
-							phone:"Please enter valid phone number"
-          },
-          date: {
-              date: "This field is required"
-          },
-      }
+      phone: {
+        required: true,
+        phone: true,
+      },
+      date: {
+        required: true,
+      },
+
+    },
+    messages: {
+      fname: "This field is required",
+      lname: "This field is required",
+      email: {
+        required: "This field is required",
+        email: "Please enter valid email address"
+      },
+      phone: {
+        required: "This field is required",
+        phone: "Please enter valid phone number"
+      },
+      date: {
+        required: "This field is required"
+      },
+    }
   });
 
 });
@@ -79,4 +84,5 @@ function capitalizeLetter(name) {
   str = str.join(" ");
   return str
 }
+
 
