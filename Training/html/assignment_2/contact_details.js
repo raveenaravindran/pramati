@@ -4,8 +4,15 @@ $(document).ready(function () {
   $("#date").datepicker({
     format: 'mm-dd-yyyy',
     endDate: '+0d',
-    autoclose: true
+    autoclose: true,
+	name: 'clear_message'
   });
+
+	/*$('#date').on('change', function(){
+		if ($("#date").val().length > 1){
+			$("#date").rules("remove", "required");
+		}
+	});*/
 
   $("#fname").keyup(function () {
     $('#fname').css('textTransform', 'capitalize');
@@ -16,7 +23,7 @@ $(document).ready(function () {
   });
 
   $.validator.addMethod("email", function (value, element) {
-    return this.optional(element) || /^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,4}$/i.test(value);
+    return this.optional(element) || /^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{1,4}$/i.test(value);
   }, "Please enter a valid email address.");
 
   $.validator.addMethod("phone", function (value, element) {
@@ -37,7 +44,6 @@ $(document).ready(function () {
       },
       date: {
         required: true,
-	date:true
       },
     },
     messages: {
@@ -64,16 +70,20 @@ function submitValues() {
   var email = $("#email").val();
   var phone = $("#phone").val();
   var dob = $("#date").val();
+	
+	if (fname && lname && email && phone && dob)
+	{
+		var table_content = "<tr><td>" + capitalizeLetter(fname) + "</td><td>" + capitalizeLetter(lname) + "</td><td>" + email + "</td><td>" + dob + "</td><td>" + phone + "</td></tr>";
+		$("#contact_info").append(table_content);
 
-  var table_content = "<tr><td>" + capitalizeLetter(fname) + "</td><td>" + capitalizeLetter(lname) + "</td><td>" + email + "</td><td>" + dob + "</td><td>" + phone + "</td></tr>";
-  $("#contact_info").append(table_content);
+		$("#userForm")[0].reset();
 
-  $("#userForm")[0].reset();
-
-  $("#fname").rules("remove", "required");
-  $("#lname").rules("remove", "required");
-  $("#email").rules("remove", "required");
-  $("#phone").rules("remove", "required");
+		$("#fname").rules("remove", "required");
+		$("#lname").rules("remove", "required");
+		$("#email").rules("remove", "required");
+		$("#phone").rules("remove", "required");
+		
+	}
 }
 
 function capitalizeLetter(name) {
