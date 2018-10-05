@@ -6,7 +6,6 @@ $(document).ready(function () {
     format: 'mm-dd-yyyy',
     endDate: '+0d',
     autoclose: true
-
   });
 
   $("#fname").keyup(function () {
@@ -25,7 +24,6 @@ $(document).ready(function () {
     return this.optional(element) || /^[6-9]{1}[0-9]{9}$/.test(value);
   }, "Please enter valid phone number.");
 
-
   $("#userForm").validate({
     rules: {
       fname: "required",
@@ -40,9 +38,8 @@ $(document).ready(function () {
       },
       date: {
         required: true,
-				date:true
+	date:true
       },
-
     },
     messages: {
       fname: "This field is required",
@@ -60,9 +57,7 @@ $(document).ready(function () {
       },
     }
   });
-
 });
-
 
 function submitValues() {
   var fname = $("#fname").val();
@@ -80,18 +75,7 @@ function submitValues() {
   $("#lname").rules("remove", "required");
   $("#email").rules("remove", "required");
   $("#phone").rules("remove", "required");
-	
-
 }
-
-/*function change(){
-  $("#fname").rules("remove", "required");
-  $("#lname").rules("remove", "required");
-  $("#email").rules("remove", "required");
-	$("#phone").rules("remove", "required");
-	
-	
-}*/
 
 function capitalizeLetter(name) {
   str = name.split(" ");
