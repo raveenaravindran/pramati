@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 
   $("#date").datepicker({
@@ -7,22 +6,22 @@ $(document).ready(function () {
     autoclose: true,
   });
 
-	/*$('#date').on('change', function(){
-		if ($("#date").val().length > 1){
-			$("#date").rules("remove", "required");
-		}
-	});*/
+  // $('#date').on('change', function(){
+  // 	if ($(this).val().length > 1){
+  // 		$(this).rules("remove", "required");
+  // 	}
+  // });
 
-  $("#fname").keyup(function () {
-    $('#fname').css('textTransform', 'capitalize');
+  $("#first_name").keyup(function () {
+    $('#first_name').css('textTransform', 'capitalize');
   });
 
-  $("#lname").keyup(function () {
+  $("#last_name").keyup(function () {
     $('#lname').css('textTransform', 'capitalize');
   });
 
   $.validator.addMethod("email", function (value, element) {
-    return this.optional(element) || /^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{1,4}$/i.test(value);
+    return this.optional(element) || /^[a-zA-Z._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{1,4}$/i.test(value);
   }, "Please enter a valid email address.");
 
   $.validator.addMethod("phone", function (value, element) {
@@ -31,8 +30,8 @@ $(document).ready(function () {
 
   $("#userForm").validate({
     rules: {
-      fname: "required",
-      lname: "required",
+      first_name: "required",
+      last_name: "required",
       email: {
         required: true,
         email: true
@@ -46,8 +45,8 @@ $(document).ready(function () {
       },
     },
     messages: {
-      fname: "This field is required",
-      lname: "This field is required",
+      first_name: "This field is required",
+      last_name: "This field is required",
       email: {
         required: "This field is required",
         email: "Please enter valid email address"
@@ -64,22 +63,21 @@ $(document).ready(function () {
 });
 
 function submitValues() {
-  var fname = $("#fname").val();
-  var lname = $("#lname").val();
+  var first_name = $("#first_name").val();
+  var last_name = $("#lname").val();
   var email = $("#email").val();
   var phone = $("#phone").val();
   var dob = $("#date").val();
-	
-	if (fname && lname && email && phone && dob)
-	{
-	  var table_content = "<tr><td>" + capitalizeLetter(fname) + "</td><td>" + capitalizeLetter(lname) + "</td><td>" + email + "</td><td>" + dob + "</td><td>" + phone + "</td></tr>";
-	  $("#contact_info").append(table_content);
-	  $("#userForm")[0].reset();
-	  $("#fname").rules("remove", "required");
-	  $("#lname").rules("remove", "required");
-	  $("#email").rules("remove", "required");
-	  $("#phone").rules("remove", "required");	
-	}
+
+  if (first_name && lname && email && phone && dob) {
+    var table_content = "<tr><td>" + capitalizeLetter(first_name) + "</td><td>" + capitalizeLetter(last_name) + "</td><td>" + email + "</td><td>" + dob + "</td><td>" + phone + "</td></tr>";
+    $("#contact_info").append(table_content);
+    $("#userForm")[0].reset();
+    $("#first_name").rules("remove", "required");
+    $("#last_name").rules("remove", "required");
+    $("#email").rules("remove", "required");
+    $("#phone").rules("remove", "required");
+  }
 }
 
 function capitalizeLetter(name) {
