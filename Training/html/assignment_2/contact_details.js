@@ -40,6 +40,7 @@ $(document).ready(function () {
       },
       date: {
         required: true,
+				date:true
       },
 
     },
@@ -79,7 +80,7 @@ function submitValues() {
   $("#lname").rules("remove", "required");
   $("#email").rules("remove", "required");
   $("#phone").rules("remove", "required");
-  $("#date").rules("remove", "This field is required");
+	
 
 }
 
