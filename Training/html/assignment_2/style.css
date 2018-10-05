@@ -1,9 +1,4 @@
 
-.userform label {
-    width: 120px;
-    color: #333;
-    float: left;
-}
 input.error {
     border: 1px solid red;
 }
