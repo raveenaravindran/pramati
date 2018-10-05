@@ -5,7 +5,6 @@ $(document).ready(function () {
     format: 'mm-dd-yyyy',
     endDate: '+0d',
     autoclose: true,
-	name: 'clear_message'
   });
 
 	/*$('#date').on('change', function(){
