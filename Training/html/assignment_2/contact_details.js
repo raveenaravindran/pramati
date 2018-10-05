@@ -73,16 +73,13 @@ function submitValues() {
 	
 	if (fname && lname && email && phone && dob)
 	{
-		var table_content = "<tr><td>" + capitalizeLetter(fname) + "</td><td>" + capitalizeLetter(lname) + "</td><td>" + email + "</td><td>" + dob + "</td><td>" + phone + "</td></tr>";
-		$("#contact_info").append(table_content);
-
-		$("#userForm")[0].reset();
-
-		$("#fname").rules("remove", "required");
-		$("#lname").rules("remove", "required");
-		$("#email").rules("remove", "required");
-		$("#phone").rules("remove", "required");
-		
+	  var table_content = "<tr><td>" + capitalizeLetter(fname) + "</td><td>" + capitalizeLetter(lname) + "</td><td>" + email + "</td><td>" + dob + "</td><td>" + phone + "</td></tr>";
+	  $("#contact_info").append(table_content);
+	  $("#userForm")[0].reset();
+	  $("#fname").rules("remove", "required");
+	  $("#lname").rules("remove", "required");
+	  $("#email").rules("remove", "required");
+	  $("#phone").rules("remove", "required");	
 	}
 }
 
