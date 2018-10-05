@@ -6,7 +6,7 @@ $(document).ready(function () {
     format: 'mm-dd-yyyy',
     endDate: '+0d',
     autoclose: true
-		
+
   });
 
   $("#fname").keyup(function () {
@@ -75,10 +75,11 @@ function submitValues() {
 
   $("#userForm")[0].reset();
 
-	$("#fname").rules("remove", "required");
+  $("#fname").rules("remove", "required");
   $("#lname").rules("remove", "required");
   $("#email").rules("remove", "required");
-	$("#phone").rules("remove", "required");
+  $("#phone").rules("remove", "required");
+  $("#date").rules("remove", "This field is required");
 
 }
 
