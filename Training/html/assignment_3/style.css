@@ -1,12 +1,18 @@
-.btn-square {
-  width: 50px;
+.input{
+	height : 80px;
+	width : 500px;
+	text-align : right;
+  }
+
+
+.btn, .equals, .sign, .percentage, .factorial, .clear, 
+.btn-pi, .log, .sin, .cos, .tan, .btn-clear, .exponential, .clear, .square-root {
+  font-size: 14px;
+  margin: auto;
+  width: 80px;
   height: 50px;
+  margin-right: 16.6px;
+  margin-top: 20px;
+  margin-left: 3.2px;
 }
 
-.row {
-  padding: 6px;
-}
-
-.textbox {
-  border: 5px;
-}

@@ -12,59 +12,60 @@
     <script src="calculator.js"></script>
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="col-md-6">
         <h2 class="panel text-center">Assignment 3</h2>
         <div class="panel panel-primary">
           <div class="panel-heading text-center">
-            <h4>Calculator</h4>
+            <h3>Calculator</h3>
           </div>
           <div class="panel-body col-md-offset-1">
             <div class="row">
-              <h1 id="input" class="text-default text-center"></h1>
-              <!-- <input type="text" id="input" class="text-default text-center"></input> -->
+              <h2> <input type="text" id="input" class="input" placeholder="0"/></h2>
+            </div>
+						<div class="row">
+              <input type="button" value="1" class="btn">
+              <input type="button" value="2" class="btn">
+              <input type="button" value="3" class="btn">
+              <input type="button" value="+" class="btn">
+              <input type="button" value="-" class="btn">
             </div>
             <div class="row">
-              <button id="btn-one" type="button" class="btn btn-square">1</button>
-              <button id="btn-two" type="button" class="btn btn-square col-sm-offset-1">2</button>
-              <button id="btn-three" type="button" class="btn btn-square col-sm-offset-1">3</button>
-              <button id="btn-add" type="button" class="btn btn-square col-sm-offset-1">+</button>
-              <button id="btn-neg" type="button" class="btn btn-square col-sm-offset-1">+/-</button>
+              <input type="button" value="4" class="btn">
+              <input type="button" value="5" class="btn">
+              <input type="button" value="6" class="btn">
+              <input type="button" value="/" class="btn">
+              <input type="button" value="*" class="btn">
+              
             </div>
             <div class="row">
-              <button id="btn-four" type="button" class="btn btn-square">4</button>
-              <button id="btn-five" type="button" class="btn btn-square col-sm-offset-1">5</button>
-              <button id="btn-six" type="button" class="btn btn-square col-sm-offset-1">6</button>
-              <button id="btn-diff" type="button" class="btn btn-square col-sm-offset-1">-</button>
-              <button id="btn-percent" type="button" class="btn btn-square col-sm-offset-1">%</button>
+              <input type="button" value="7" class="btn">
+              <input type="button" value="8" class="btn">
+              <input type="button" value="9" class="btn">
+              <input type="button" value="(" class="btn">
+              <input type="button" value=")" class="btn">
+              
             </div>
             <div class="row">
-              <button id="btn-seven" type="button" class="btn btn-square">7</button>
-              <button id="btn-eight" type="button" class="btn btn-square col-sm-offset-1">8</button>
-              <button id="btn-nine" type="button" class="btn btn-square col-sm-offset-1">9</button>
-              <button id="btn-multiply" type="button" class="btn btn-square col-sm-offset-1">x</button>
-              <button id="btn-div" type="button" class="btn btn-square col-sm-offset-1">÷</button>
+              <input type="button" value="0" class="btn">
+              <input type="button" value="." class="btn">
+              <input type="button" value="√" class="square-root" id="square-root">
+              <input type="button" value="π" class="btn-pi" id="btn-pi">
+              <input type="button" value="x!" class="factorial" id="factorial">
             </div>
             <div class="row">
-              <button id="btn-zero" type="button" class="btn btn-square">0</button>
-              <button id="btn-e" type="button" class="btn btn-square col-sm-offset-1">e</button>
-              <button id="btn-sqr-root" type="button" class="btn btn-square col-sm-offset-1">√</button>
-              <button id="btn-pi" type="button" class="btn btn-square col-sm-offset-1">π</button>
-              <button id="btn-factorial" type="button" class="btn btn-square col-sm-offset-1">X!</button>
+              <input type="button" value="log" class="log" id="log">
+              <input type="button" value="sin" class="sin" id="sin">
+              <input type="button" value="cos" class="cos" id="cos">
+              <input type="button" value="tan" class="tan" id="tan">
+              <input type="button" value="%" class="percentage" id="percentage">
             </div>
             <div class="row">
-              <button id="btn-log" type="button" class="btn btn-square">log</button>
-              <button id="btn-sin" type="button" class="btn btn-square col-sm-offset-1">sin</button>
-              <button id="btn-cos" type="button" class="btn btn-square col-sm-offset-1">cos</button>
-              <button id="btn-tan" type="button" class="btn btn-square col-sm-offset-1">tan</button>
-              <button id="btn-open-brac" type="button" class="btn btn-square col-sm-offset-1">(</button>
-            </div>
-            <div class="row">
-              <button id="btn-close-brac" type="button" class="btn btn-square ">)</button> 
-              <button id="btn-decimal" type="button" class="btn btn-square col-sm-offset-1">.</button>
-              <button id="btn-all-clear" type="button" class="btn btn-square col-sm-offset-1">AC</button>
-              <button id="btn-clear" type="button" class="btn btn-square col-sm-offset-1">C</button>
-              <button id="btn-equal" type="button" class="btn btn-square col-sm-offset-1">=</button>
+              <input type="button" value="+/-" class="sign" id="sign">
+              <input type="button" value="e" class="exponential" id="exponential">
+              <input type="button" value="AC" class="btn-clear" id="all-clear">
+              <input type="button" value="C" class="clear" id="clear">
+              <input type="button" value="=" class="equals" id="equals">
             </div>
           </div>
         </div>
