@@ -1,63 +1,65 @@
 $(document).ready(function() {
 
-	$('.btn').click(function(e) {
+	$('.btn').click(function() {
 
 		$('#input').val($('.input').val() + $(this).val());
 
 	});
 
-	$('#all-clear').click(function(e) {
+	$('#all-clear').click(function() {
 		$('#input').val('');
 	});
 
-	$('#clear').click(function(e) {
+	$('#clear').click(function() {
 		var el = $("#input");
     var the_value = el.val();
     the_value = the_value.substring(0, the_value.length - 1);
     el.val(the_value);
 	});
 
-	$('.equals').click(function(e) {
-		$('#input').val(eval($('#input').val()));
+	$('.equals').click(function() {
+		$('#input').val($('.input').val() + $(this).val() + eval($('#input').val()));
+
 	});
 
-	$('.percentage').click(function(e) {
+	$('.percentage').click(function() {
   	$('#input').val(eval($('#input').val()/100));
   });
 
-  $('.sign').click(function(e) {
+  $('.sign').click(function() {
   	$('#input').val(eval($('#input').val()*(-1)));
   });
 
-  $('.btn-pi').click(function(e) {
-  	$('#input').val(eval($('#input').val()*(3.14159)));
+  $('.btn-pi').click(function() {
+  	$('#input').val(eval($('#input').val()*(Math.PI)));
   });
 
-  $('.square-root').click(function(e) {
+  $('.square-root').click(function() {
   	$('#input').val(SquareRoot($('#input').val()));
   });
 
-  $('.factorial').click(function(e) {
+  $('.factorial').click(function() {
   	$('#input').val(GetFactorial($('#input').val()));
   });
 
-  $('.exponential').click(function(e) {
+  $('.exponential').click(function() {
   	$('#input').val(CalcExponential($('#input').val()));
   });
 
-  $('.log').click(function(e) {
+  $('.log').click(function() {
   	$('#input').val(CalculateLog($('#input').val()));
   });
 
-  $('.sin').click(function(e) {
-  	$('#input').val(CalculateSin($('#input').val()));
+  $('.sin').click(function() {
+    flag=1;
+  	//$('#input').val(CalculateSin($('#input').val()));
   });
 
-  $('.cos').click(function(e) {
+  $('.cos').click(function() {
   	$('#input').val(CalculateCos($('#input').val()));
   });
 
-  $('.tan').click(function(e) {
+  $('.tan').click(function() {
   	$('#input').val(CalculateTan($('#input').val()));
   });
 
