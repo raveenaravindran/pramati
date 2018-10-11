@@ -1,155 +1,121 @@
-$(document).ready(function () {
+$(document).ready(function() {
+  // var sin_flag=0;
+  // var cos_flag=0;
 
-<<<<<<< HEAD
-	$('.btn').click(function() {
+  $('.btn').click(function() {
 
-		$('#input').val($('.input').val() + $(this).val());
-
-	});
-
-	$('#all-clear').click(function() {
-		$('#input').val('');
-	});
-
-	$('#clear').click(function() {
-		var el = $("#input");
-=======
-  $('.btn').click(function (e) {
     $('#input').val($('.input').val() + $(this).val());
+
   });
 
-  $('#all-clear').click(function (e) {
+  $('#all-clear').click(function() {
     $('#input').val('');
   });
 
-  $('#clear').click(function (e) {
+  $('#clear').click(function() {
     var el = $("#input");
->>>>>>> eeba18721d2fed8ca44e76b0c82c080d638a4ab7
     var the_value = el.val();
     the_value = the_value.substring(0, the_value.length - 1);
     el.val(the_value);
   });
 
-<<<<<<< HEAD
-	$('.equals').click(function() {
-		$('#input').val($('.input').val() + $(this).val() + eval($('#input').val()));
+  $('.equals').click(function() {
+    $('#input').val($('.input').val() + $(this).val() + eval($('#input').val()));
+    // if (sin_flag==1){
+    //   $('#input').val('sin(' + $('#input').val()+')'+ '=' + Math.sin($('#input').val()));
+    // }
+    // else{
+    //   sin_flag = 0;
+    // }
+    // if (cos_flag==1){
+    //   $('#input').val('cos(' + $('#input').val()+')'+ '=' + Math.cos($('#input').val()));
+    // }
+    // else{
+    //   cos_flag = 0;
+    // }
+  });
 
-	});
-
-	$('.percentage').click(function() {
-  	$('#input').val(eval($('#input').val()/100));
+  $('.percentage').click(function() {
+    $('#input').val(eval($('#input').val()/100));
   });
 
   $('.sign').click(function() {
-  	$('#input').val(eval($('#input').val()*(-1)));
+    $('#input').val(eval($('#input').val()*(-1)));
   });
 
   $('.btn-pi').click(function() {
-  	$('#input').val(eval($('#input').val()*(Math.PI)));
+    $('#input').val(eval($('#input').val()*(Math.PI)));
   });
 
   $('.square-root').click(function() {
-  	$('#input').val(SquareRoot($('#input').val()));
-  });
-
-  $('.factorial').click(function() {
-  	$('#input').val(GetFactorial($('#input').val()));
-  });
-
-  $('.exponential').click(function() {
-  	$('#input').val(CalcExponential($('#input').val()));
-  });
-
-  $('.log').click(function() {
-  	$('#input').val(CalculateLog($('#input').val()));
-  });
-
-  $('.sin').click(function() {
-    flag=1;
-  	//$('#input').val(CalculateSin($('#input').val()));
-  });
-
-  $('.cos').click(function() {
-  	$('#input').val(CalculateCos($('#input').val()));
-  });
-
-  $('.tan').click(function() {
-  	$('#input').val(CalculateTan($('#input').val()));
-=======
-  $('.equals').click(function (e) {
-    $('#input').val(eval($('#input').val()));
-  });
-
-  $('.percentage').click(function (e) {
-    $('#input').val(eval($('#input').val() / 100));
-  });
-
-  $('.sign').click(function (e) {
-    $('#input').val(eval($('#input').val() * (-1)));
-  });
-
-  $('.btn-pi').click(function (e) {
-    $('#input').val(eval($('#input').val() * (3.14159)));
-  });
-
-  $('.square-root').click(function (e) {
     $('#input').val(SquareRoot($('#input').val()));
   });
 
-  $('.factorial').click(function (e) {
+  $('.factorial').click(function() {
     $('#input').val(GetFactorial($('#input').val()));
   });
 
-  $('.exponential').click(function (e) {
+  $('.exponential').click(function() {
     $('#input').val(CalcExponential($('#input').val()));
   });
 
-  $('.log').click(function (e) {
+  $('.log').click(function() {
     $('#input').val(CalculateLog($('#input').val()));
   });
 
-  $('.sin').click(function (e) {
+  $('.sin').click(function() {
+    //sin_flag=1;
     $('#input').val(CalculateSin($('#input').val()));
   });
 
-  $('.cos').click(function (e) {
+  $('.cos').click(function() {
+    //cos_flag = 1;
     $('#input').val(CalculateCos($('#input').val()));
   });
 
-  $('.tan').click(function (e) {
+  $('.tan').click(function() {
     $('#input').val(CalculateTan($('#input').val()));
->>>>>>> eeba18721d2fed8ca44e76b0c82c080d638a4ab7
   });
+
+
 });
 
-function GetFactorial(value) {
-  tempvalue = 1;
-  for (i = value; i > 0; i--) {
-    tempvalue *= i;
-  }
-  return tempvalue
-}
+function GetFactorial(value)
+ {
+   tempvalue = 1;
+   for ( i=value ; i>0 ;  i-- )
+    {
+       tempvalue *=  i ;
+    }
+return tempvalue
+ }
 
-function CalculateLog(value) {
+function CalculateLog(value)
+ {
   return Math.log(value)
-}
+ }
 
-function CalculateSin(value) {
+function CalculateSin(value)
+{
   return Math.sin(value)
 }
 
-function CalculateCos(value) {
+function CalculateCos(value)
+{
   return Math.cos(value)
 }
 
-function CalculateTan(value) {
+function CalculateTan(value)
+{
   return Math.tan(value)
 }
 
-function CalcExponential(value) {
+function CalcExponential(value)
+{
   return Math.exp(value)
 }
 
-function SquareRoot(value) {
+function SquareRoot(value)
+{
   return Math.sqrt(value)
 }
