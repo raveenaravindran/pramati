@@ -1,11 +1,9 @@
 $(document).ready(function() {
-  // var sin_flag=0;
-  // var cos_flag=0;
 
   $('.btn').click(function() {
-
-    $('#input').val($('.input').val() + $(this).val());
-
+    var previousVal = $('.input').val();
+    var newValue = $(this).val();
+    $('#input').val(previousVal + newValue);
   });
 
   $('#all-clear').click(function() {
@@ -14,41 +12,31 @@ $(document).ready(function() {
 
   $('#clear').click(function() {
     var el = $("#input");
-    var the_value = el.val();
-    the_value = the_value.substring(0, the_value.length - 1);
-    el.val(the_value);
+    var inputValue = el.val();
+    inputValue = inputValue.substring(0, inputValue.length - 1);
+    el.val(inputValue);
   });
 
   $('.equals').click(function() {
-    $('#input').val($('.input').val() + $(this).val() + eval($('#input').val()));
-    // if (sin_flag==1){
-    //   $('#input').val('sin(' + $('#input').val()+')'+ '=' + Math.sin($('#input').val()));
-    // }
-    // else{
-    //   sin_flag = 0;
-    // }
-    // if (cos_flag==1){
-    //   $('#input').val('cos(' + $('#input').val()+')'+ '=' + Math.cos($('#input').val()));
-    // }
-    // else{
-    //   cos_flag = 0;
-    // }
+    var previousVal = $('.input').val();
+    var newValue = $(this).val();
+    $('#input').val(previousVal + newValue + eval(previousVal));
   });
 
   $('.percentage').click(function() {
-    $('#input').val(eval($('#input').val()/100));
+    $('#input').val($('#input').val()/100);
   });
 
   $('.sign').click(function() {
-    $('#input').val(eval($('#input').val()*(-1)));
+    $('#input').val($('#input').val()*(-1));
   });
 
   $('.btn-pi').click(function() {
-    $('#input').val(eval($('#input').val()*(Math.PI)));
+    $('#input').val($('#input').val()*(Math.PI));
   });
 
   $('.square-root').click(function() {
-    $('#input').val(SquareRoot($('#input').val()));
+    $('#input').val(Math.sqrt($('#input').val()));
   });
 
   $('.factorial').click(function() {
@@ -56,66 +44,32 @@ $(document).ready(function() {
   });
 
   $('.exponential').click(function() {
-    $('#input').val(CalcExponential($('#input').val()));
+    $('#input').val(Math.exp($('#input').val()));
   });
 
   $('.log').click(function() {
-    $('#input').val(CalculateLog($('#input').val()));
+    $('#input').val(Math.log($('#input').val(),'log'));
   });
 
   $('.sin').click(function() {
-    //sin_flag=1;
-    $('#input').val(CalculateSin($('#input').val()));
+    $('#input').val(Math.sin($('#input').val()));
   });
 
   $('.cos').click(function() {
-    //cos_flag = 1;
-    $('#input').val(CalculateCos($('#input').val()));
+    $('#input').val(Math.cos($('#input').val()));
   });
 
   $('.tan').click(function() {
-    $('#input').val(CalculateTan($('#input').val()));
+    $('#input').val(Math.tan($('#input').val()));
   });
 
 
 });
 
-function GetFactorial(value)
- {
-   tempvalue = 1;
-   for ( i=value ; i>0 ;  i-- )
-    {
-       tempvalue *=  i ;
+function GetFactorial(value) {
+    if(value == 0) {
+        return 1
+    } else {
+        return value * GetFactorial(value - 1);
     }
-return tempvalue
- }
-
-function CalculateLog(value)
- {
-  return Math.log(value)
- }
-
-function CalculateSin(value)
-{
-  return Math.sin(value)
-}
-
-function CalculateCos(value)
-{
-  return Math.cos(value)
-}
-
-function CalculateTan(value)
-{
-  return Math.tan(value)
-}
-
-function CalcExponential(value)
-{
-  return Math.exp(value)
-}
-
-function SquareRoot(value)
-{
-  return Math.sqrt(value)
 }

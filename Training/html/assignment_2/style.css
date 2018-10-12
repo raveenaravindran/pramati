@@ -7,6 +7,10 @@ label.error{
     width: 100%;
     color: red;
     font-style: normal;
-    
 }
+
+.capitalize{
+	text-transform : capitalize;
+}
+
 

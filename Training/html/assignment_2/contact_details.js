@@ -4,17 +4,11 @@ $(document).ready(function () {
     format: 'mm-dd-yyyy',
     endDate: '+0d',
     autoclose: true,
-    }).on('change', function() {
-        $(this).valid();
+  }).on('change', function() {
+    $(this).valid();
   });
 
-  $("#first_name").keyup(function () {
-    $('#first_name').css('textTransform', 'capitalize');
-  });
-
-  $("#last_name").keyup(function () {
-    $('#last_name').css('textTransform', 'capitalize');
-  });
+  valiate_form()
 
   $.validator.addMethod("email", function (value, element) {
     return this.optional(element) || /^[a-zA-Z._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{1,4}$/i.test(value);
@@ -32,10 +26,15 @@ $(document).ready(function () {
     return /^[a-zA-Z]+[a-zA-Z\' ']{0,20}$/.test(value); 
   }, "First name cannot begin with spaces");
 
-  $('#first_name,#last_name,#email,#phone,#date').blur(function(){
+  $('#first_name, #last_name, #email, #phone, #date').focusout(function() {
+      
       $("form").validate().element($(this));
+      // $(this).valid();
   });
 
+});
+
+function valiate_form() {
   $("#userForm").validate({
     rules: {
       first_name:{
@@ -60,7 +59,6 @@ $(document).ready(function () {
 
       date: {
         required: true,
-        date: true,
       },
     },
     messages: {
@@ -86,26 +84,21 @@ $(document).ready(function () {
       },
     }
   });
-});
+}
 
 function submitValues() {
-  var first_name = $("#first_name").val();
-  var last_name = $("#last_name").val();
-  var email = $("#email").val();
-  var phone = $("#phone").val();
-  var dob = $("#date").val();
+  valiate_form();
+  if ($("form").valid()) {
+    var first_name = $("#first_name").val();
+    var last_name = $("#last_name").val();
+    var email = $("#email").val();
+    var phone = $("#phone").val();
+    var dob = $("#date").val();
 
-  if (first_name && last_name && email && phone && dob) {
-    var table_content = "<tr><td>" + capitalizeLetter(first_name) + "</td><td>" + capitalizeLetter(last_name) + "</td><td>" + email + "</td><td>" + dob + "</td><td>" + phone + "</td></tr>";
-    $("#contact_info").append(table_content);
-    $("#userForm")[0].reset();
-    $("#first_name").rules("remove", "required");
-    $("#first_name").rules("remove", "first_name_valid");
-    $("#last_name").rules("remove", "required");
-    $("#last_name").rules("remove", "last_name_valid");
-    $("#email").rules("remove", "required");
-    $("#phone").rules("remove", "required");
-    
+    if (first_name && last_name && email && phone && dob) {
+      var table_content = "<tr><td>" + capitalizeLetter(first_name) + "</td><td>" + capitalizeLetter(last_name) + "</td><td>" + email + "</td><td>" + dob + "</td><td>" + phone + "</td></tr>";
+      $("#contact_info").append(table_content);
+    }
   }
 }
 
