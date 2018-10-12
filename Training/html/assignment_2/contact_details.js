@@ -4,21 +4,9 @@ $(document).ready(function () {
     format: 'mm-dd-yyyy',
     endDate: '+0d',
     autoclose: true,
-    onSelect: function () {
-        $("#userForm").valid();
-    }
-  }).on('change', function() {
+    }).on('change', function() {
         $(this).valid();
-      });
-
-  // function sample(){
-  //   alert('ok')
-  // }
-  // $('#date').on('change', function(){
-  // 	if ($(this).val().length > 1){
-  // 		$(this).rules("remove", "required");
-  // 	}
-  // });
+  });
 
   $("#first_name").keyup(function () {
     $('#first_name').css('textTransform', 'capitalize');
@@ -32,7 +20,6 @@ $(document).ready(function () {
     return this.optional(element) || /^[a-zA-Z._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{1,4}$/i.test(value);
   }, "Please enter a valid email address.");
 
-
   $.validator.addMethod("phone", function (value, element) {
     return this.optional(element) || /^[6-9]{1}[0-9]{9}$/.test(value);
   }, "Please enter valid phone number.");
@@ -45,27 +32,32 @@ $(document).ready(function () {
     return /^[a-zA-Z]+[a-zA-Z\' ']{0,20}$/.test(value); 
   }, "First name cannot begin with spaces");
 
-
-
+  $('#first_name,#last_name,#email,#phone,#date').blur(function(){
+      $("form").validate().element($(this));
+  });
 
   $("#userForm").validate({
     rules: {
       first_name:{
         required : true,
         first_name_valid : true,
-      } ,
+      },
+
       last_name:{
         required : true,
         last_name_valid : true,
-      } ,
+      },
+
       email: {
         required: true,
         email: true
       },
+
       phone: {
         required: true,
         phone: true,
       },
+
       date: {
         required: true,
         date: true,
@@ -75,7 +67,7 @@ $(document).ready(function () {
       first_name:{
        required:"This field is required.",
        first_name_valid:"Please enter valid first name.",
-      },
+       },
       last_name: {
        required:"This field is required.",
        last_name_valid:"Please enter valid last name.",
@@ -113,8 +105,7 @@ function submitValues() {
     $("#last_name").rules("remove", "last_name_valid");
     $("#email").rules("remove", "required");
     $("#phone").rules("remove", "required");
-    // $("#date").rules("remove", "required");
-
+    
   }
 }
 
