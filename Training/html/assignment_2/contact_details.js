@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
   $("#date").datepicker({
     format: 'mm-dd-yyyy',
     endDate: '+0d',
@@ -7,9 +6,7 @@ $(document).ready(function () {
   }).on('change', function () {
     $(this).valid();
   });
-
   valiate_form();
-
   $.validator.addMethod("email", function (value, element) {
     return this.optional(element) || /^[a-zA-Z._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{1,4}$/i.test(value);
   }, "Please enter a valid email address.");
@@ -27,10 +24,8 @@ $(document).ready(function () {
   }, "Please enter valid last name.");
 
   $('#first_name, #last_name, #email, #phone, #date').focusout(function () {
-
     $("form").validate().element($(this));
   });
-
 });
 
 function valiate_form() {
