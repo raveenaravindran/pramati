@@ -40,22 +40,18 @@ function valiate_form() {
         required: true,
         first_name_valid: true,
       },
-
       last_name: {
         required: true,
         last_name_valid: true,
       },
-
       email: {
         required: true,
         email: true
       },
-
       phone: {
         required: true,
         phone: true,
       },
-
       date: {
         required: true,
       },
