@@ -62,10 +62,8 @@ $(document).ready(function() {
   $('.tan').click(function() {
     $('#input').val(Math.tan($('#input').val()));
   });
-
-
 });
 
 function GetFactorial(n){
-    return (n<2)?1:GetFactorial(n-1)*n;
+  return (n<2)?1:GetFactorial(n-1)*n;
 }
