@@ -4,11 +4,11 @@ $(document).ready(function () {
     format: 'mm-dd-yyyy',
     endDate: '+0d',
     autoclose: true,
-  }).on('change', function() {
+  }).on('change', function () {
     $(this).valid();
   });
 
-  valiate_form()
+  valiate_form();
 
   $.validator.addMethod("email", function (value, element) {
     return this.optional(element) || /^[a-zA-Z._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{1,4}$/i.test(value);
@@ -19,15 +19,15 @@ $(document).ready(function () {
   }, "Please enter valid phone number.");
 
   $.validator.addMethod("first_name_valid", function (value, element) {
-    return /^[a-zA-Z]+[a-zA-Z\' ']{0,20}$/.test(value); 
+    return /^[a-zA-Z]+[a-zA-Z\' ']{0,20}$/.test(value);
   }, "Please enter valid first name.");
 
   $.validator.addMethod("last_name_valid", function (value, element) {
-    return /^[a-zA-Z]+[a-zA-Z\' ']{0,20}$/.test(value); 
+    return /^[a-zA-Z]+[a-zA-Z\' ']{0,20}$/.test(value);
   }, "Please enter valid last name.");
 
-  $('#first_name, #last_name, #email, #phone, #date').focusout(function() {
-      
+  $('#first_name, #last_name, #email, #phone, #date').focusout(function () {
+
     $("form").validate().element($(this));
   });
 
@@ -36,14 +36,14 @@ $(document).ready(function () {
 function valiate_form() {
   $("#userForm").validate({
     rules: {
-      first_name:{
-        required : true,
-        first_name_valid : true,
+      first_name: {
+        required: true,
+        first_name_valid: true,
       },
 
-      last_name:{
-        required : true,
-        last_name_valid : true,
+      last_name: {
+        required: true,
+        last_name_valid: true,
       },
 
       email: {
@@ -61,13 +61,13 @@ function valiate_form() {
       },
     },
     messages: {
-      first_name:{
-       required:"This field is required.",
-       first_name_valid:"Please enter valid first name.",
-       },
+      first_name: {
+        required: "This field is required.",
+        first_name_valid: "Please enter valid first name.",
+      },
       last_name: {
-       required:"This field is required.",
-       last_name_valid:"Please enter valid last name.",
+        required: "This field is required.",
+        last_name_valid: "Please enter valid last name.",
       },
       email: {
         required: "This field is required.",
@@ -79,7 +79,7 @@ function valiate_form() {
       },
       date: {
         required: "This field is required.",
-        date:"Please enter valid date."
+        date: "Please enter valid date."
       },
     }
   });
@@ -88,11 +88,11 @@ function valiate_form() {
 function submitValues() {
   valiate_form();
   if ($("form").valid()) {
-		addDetails();
+    addDetails();
   }
 }
 
-function addDetails(){
+function addDetails() {
   var first_name = $("#first_name").val();
   var last_name = $("#last_name").val();
   var email = $("#email").val();
@@ -114,5 +114,3 @@ function capitalizeLetter(name) {
   str = str.join(" ");
   return str
 }
-
-
