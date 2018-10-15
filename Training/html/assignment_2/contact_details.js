@@ -20,16 +20,15 @@ $(document).ready(function () {
 
   $.validator.addMethod("first_name_valid", function (value, element) {
     return /^[a-zA-Z]+[a-zA-Z\' ']{0,20}$/.test(value); 
-  }, "First name cannot begin with spaces");
+  }, "Please enter valid first name.");
 
   $.validator.addMethod("last_name_valid", function (value, element) {
     return /^[a-zA-Z]+[a-zA-Z\' ']{0,20}$/.test(value); 
-  }, "First name cannot begin with spaces");
+  }, "Please enter valid last name.");
 
   $('#first_name, #last_name, #email, #phone, #date').focusout(function() {
       
     $("form").validate().element($(this));
-      // $(this).valid();
   });
 
 });
