@@ -88,11 +88,11 @@ function valiate_form() {
 function submitValues() {
   valiate_form();
   if ($("form").valid()) {
-		addTableDetails();
+		addDetails();
   }
 }
 
-function addTableDetails(){
+function addDetails(){
   var first_name = $("#first_name").val();
   var last_name = $("#last_name").val();
   var email = $("#email").val();
