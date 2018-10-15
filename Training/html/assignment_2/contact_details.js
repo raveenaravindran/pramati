@@ -28,7 +28,7 @@ $(document).ready(function () {
 
   $('#first_name, #last_name, #email, #phone, #date').focusout(function() {
       
-      $("form").validate().element($(this));
+    $("form").validate().element($(this));
       // $(this).valid();
   });
 
@@ -89,16 +89,21 @@ function valiate_form() {
 function submitValues() {
   valiate_form();
   if ($("form").valid()) {
-    var first_name = $("#first_name").val();
-    var last_name = $("#last_name").val();
-    var email = $("#email").val();
-    var phone = $("#phone").val();
-    var dob = $("#date").val();
+		addTableDetails();
+  }
+}
 
-    if (first_name && last_name && email && phone && dob) {
-      var table_content = "<tr><td>" + capitalizeLetter(first_name) + "</td><td>" + capitalizeLetter(last_name) + "</td><td>" + email + "</td><td>" + dob + "</td><td>" + phone + "</td></tr>";
-      $("#contact_info").append(table_content);
-    }
+function addTableDetails(){
+  var first_name = $("#first_name").val();
+  var last_name = $("#last_name").val();
+  var email = $("#email").val();
+  var phone = $("#phone").val();
+  var dob = $("#date").val();
+
+  if (first_name && last_name && email && phone && dob) {
+    var table_content = "<tr><td>" + capitalizeLetter(first_name) + "</td><td>" + capitalizeLetter(last_name) + "</td><td>" + email + "</td><td>" + dob + "</td><td>" + phone + "</td></tr>";
+    $("#contact_info").append(table_content);
+    $("#userForm")[0].reset();
   }
 }
 

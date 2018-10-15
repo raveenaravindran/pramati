@@ -66,10 +66,6 @@ $(document).ready(function() {
 
 });
 
-function GetFactorial(value) {
-    if(value == 0) {
-        return 1
-    } else {
-        return value * GetFactorial(value - 1);
-    }
+function GetFactorial(n){
+    return (n<2)?1:GetFactorial(n-1)*n;
 }
