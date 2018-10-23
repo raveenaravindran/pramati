@@ -35,6 +35,7 @@ $(document).ready(function () {
 
 function valiate_form() {
   $("#userForm").validate({
+
     rules: {
       first_name: {
         required: true,
@@ -82,7 +83,11 @@ function valiate_form() {
         date: "Please enter valid date."
       },
     }
+    // onfocusout: false,
+    // onkeyup: false,
+    // onclick: false
   });
+  return true
 }
 
 function submitValues() {
