@@ -5,7 +5,6 @@ $count = 0
 $count_horizontal = 0
 $check = true
 class ConnectFour
-	
 	def displayBoard
 		$board.each do |item|
 			item.each do |i|
