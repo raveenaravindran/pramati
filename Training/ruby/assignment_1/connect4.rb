@@ -15,62 +15,63 @@ class ConnectFour
 	end
 
   def checkPosition(column,display_char,player)
-  	if $row <= 6 and column <= 6
-	  	while($board[$row][column] != '-')
+  	if $row <= 6 and column <= 7
+	  	while($board[$row][column-1] != '-')
 	  		$row=$row-1 
 	  	end 	
-	  		$board[$row][column] = display_char
-  	displayBoard
+	  	$board[$row][column-1] = display_char
+  	else
+  		puts "Please enter valid column"
   	end
-  	checkVertical(column,display_char,player)
-  	checkHorizontal($row,column,display_char,player)
-  	checkDiagonal($row,column,display_char,player)
+  	
+  	self.displayBoard
+    checkVertical(column,display_char,player)
+  	checkHorizontal(column,display_char,player)
+  	checkDiagonal(column,display_char,player)
+  	$row=6
 	end
 
 	def checkVertical(column,player_char,player)
-		$row=6
   	(0..6).each do |i| 
   		if $board[i][column] == player_char
   			$count += 1
   		else
   			$count = 0
   		end
-  	end
-  	if $count == 4
-  		displayWinner(player)
-  	end
-	end
-
-	def checkHorizontal(row,column,player_char,player)
-		$row=6
-  	(0..6).each do |i| 
-  		if $board[row][i] == player_char
-  			$count_horizontal = $count_horizontal + 1	
-  		else
-  			$count_horizontal = 0
-  		end
-  	end
-  	print $count_horizontal
-  	if $count_horizontal == 4
-  		displayWinner(player)
+  		if $count == 4
+	  		displayWinner(player)
+	  	end
   	end
 	end
 
-	def checkDiagonal(row,column,player_char,player)
-		$row=6
-  	(column..6).each do |i| 
-  		if $board[row-1][i+1] == player_char
-  			$count += 1
+	def checkHorizontal(column,player_char,player)
+  	(0..6).each do |i|
+  		if $board[$row][i] == player_char
+  			$count +=  1	
   		else
   			$count = 0
   		end
+ 			if $count == 4
+	  		displayWinner(player)
+	  	end
   	end
-  	if $count == 4
-  		displayWinner(player)
-  	end
+  	
 	end
 
-
+	def checkDiagonal(column,player_char,player)
+		row = $row
+		if $board[row][column] == player_char
+			$count += 1
+			row = row - 1
+			column = column + 1
+		else
+			$count = 0
+		end
+		if $count == 4
+  		displayWinner(player)
+  	end
+  	
+	end
 
 	def displayWinner(player)
 		print player,' WINS !!!!'
@@ -103,3 +104,6 @@ end
 object = ConnectFour.new
 object.displayBoard
 object.play
+
+
+
