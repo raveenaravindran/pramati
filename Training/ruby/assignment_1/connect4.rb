@@ -1,85 +1,121 @@
 $row = 6
-$flag=0
-$board = Array.new(7) { Array.new(7, '-')}
-$count = 0
-$count_horizontal = 0
+$flag = 0
+$board = Array.new(7) { Array.new(7, '-') }
 $check = true
 class ConnectFour
-	def displayBoard
-		$board.each do |item|
+	def display_board
+		$board.each do | item |
 			item.each do |i|
-				print i," "
+				print " " ,i, " "
 			end
 			puts
 		end
 	end
 
-  def checkPosition(column,display_char,player)
-  	if $row <= 6 and column <= 7
-	  	while($board[$row][column-1] != '-')
-	  		$row=$row-1 
+  def check_position(column,display_char,player)
+  	if $row <= 6 and column <= 6
+	  	while($board[$row][column] != '-')
+	  		$row = $row-1 
+	  		if $row == -1
+		  		puts "This column is full,Please enter into another column."
+		  		break
+		  	end
 	  	end 	
-	  	$board[$row][column-1] = display_char
+	  	$board[$row][column] = display_char
+	  	
   	else
   		puts "Please enter valid column"
   	end
-  	
-  	self.displayBoard
-    checkVertical(column,display_char,player)
-  	checkHorizontal(column,display_char,player)
-  	checkDiagonal(column,display_char,player)
-  	$row=6
+  	self.display_board
+    check_vertical(column,display_char,player)
+  	check_horizontal(column,display_char,player)
+  	check_diagonal_upwards(column,display_char,player)
+  	check_diagonal_downwards(column,display_char,player)
+  	$row = 6
 	end
 
-	def checkVertical(column,player_char,player)
-  	(0..6).each do |i| 
+	def check_vertical(column,player_char,player)
+		count = 0
+  	(0..6).each do | i | 
   		if $board[i][column] == player_char
-  			$count += 1
+  			count = count + 1
   		else
-  			$count = 0
+  			count = 0
   		end
-  		if $count == 4
-	  		displayWinner(player)
-	  	end
+  	end
+  	if count == 4
+  		display_winner(player)
   	end
 	end
 
-	def checkHorizontal(column,player_char,player)
-  	(0..6).each do |i|
+	def check_horizontal(column,player_char,player)
+		count = 0
+  	(0..6).each do | i |
   		if $board[$row][i] == player_char
-  			$count +=  1	
+  			count +=  1	
   		else
-  			$count = 0
+  			count = 0
   		end
- 			if $count == 4
-	  		displayWinner(player)
+ 			if count == 4
+	  		display_winner(player)
 	  	end
-  	end
-  	
+  	end  	
 	end
 
-	def checkDiagonal(column,player_char,player)
-		row = $row
-		if $board[row][column] == player_char
-			$count += 1
-			row = row - 1
-			column = column + 1
-		else
-			$count = 0
-		end
-		if $count == 4
-  		displayWinner(player)
-  	end
-  	
-	end
+	def check_diagonal_upwards(column,player_char,player)
+		count = 0
+		diagonal_row = $row
+    diagonal_column = column
+    
+    while diagonal_row > 0 && diagonal_column < 6
+      diagonal_row = diagonal_row -1
+      diagonal_column = diagonal_column + 1
+    end
+    while diagonal_row != 7 && diagonal_column >= 0
+      if $board[diagonal_row][diagonal_column] == player_char
+        count = count + 1
+      else
+        count = 0
+      end
+      diagonal_row = diagonal_row + 1
+      diagonal_column = diagonal_column - 1
+      if count == 4
+        display_winner(player)
+      end
+    end
+  end
 
-	def displayWinner(player)
+  def check_diagonal_downwards(column,player_char,player)
+		count = 0
+		diagonal_row = $row
+    diagonal_column = column
+    
+    while diagonal_row < 6 && diagonal_column < 6
+      diagonal_row = diagonal_row + 1
+      diagonal_column = diagonal_column +1
+    end
+    while diagonal_row != 7 && diagonal_column >= 0
+      if $board[diagonal_row][diagonal_column] == player_char
+        count = count + 1
+      else
+        count = 0
+      end
+      diagonal_row = diagonal_row - 1
+      diagonal_column = diagonal_column - 1
+      if count == 4
+        display_winner(player)
+      end
+    end
+  end
+
+	def display_winner(player)
 		print player,' WINS !!!!'
 		puts
 		$check = false
 	end
 	
-	def play
+	def play_game
+
 		while($check)
 			if $flag == 0
 				player = 'Player 1'
@@ -87,7 +123,7 @@ class ConnectFour
 			  input = gets.to_i
 			  input_char = 'x'
 			  puts 
-			  checkPosition(input,input_char,player)
+			  check_position(input-1,input_char,player)
 			  $flag = 1
 			else
 				player = 'Player 2'
@@ -95,15 +131,16 @@ class ConnectFour
 			  input = gets.to_i
 			  input_char = '*'
 			  puts 
-			  checkPosition(input,input_char,player)
-			  $flag=0
+			  check_position(input-1,input_char,player)
+			  $flag = 0
 			end
 		end
 	end
 end
 object = ConnectFour.new
-object.displayBoard
-object.play
-
-
-
+puts " "
+puts "WELCOME TO CONNECT 4 GAME"
+puts " "
+object.display_board
+puts " "
+object.play_game
