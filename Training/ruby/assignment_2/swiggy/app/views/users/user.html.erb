@@ -1,0 +1,12 @@
+<h1>SIGN UP !!</h1>
+
+<%= form_for User.new do |f| %>
+<div class="form-group" >
+<p class="panel">Phone Number: <%= f.text_field 'phone'%></p>
+</div>
+<p>Name: <%= f.text_field 'name' %></p>
+<p>Email: <%= f.text_field 'email' %></p>
+<p>Password: <%= f.text_field 'password'%></p>
+
+<%= f.submit "Continue" %>
+<% end %>
