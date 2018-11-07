@@ -1,0 +1,2 @@
+class NewDb < ApplicationRecord
+end

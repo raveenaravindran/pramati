@@ -1,8 +1,10 @@
-$row = 6
 $flag = 0
 $board = Array.new(7) { Array.new(7, '-') }
 $check = true
+$row = 6
+
 class ConnectFour
+	$row = 6
 	def display_board
 		$board.each do | item |
 			item.each do |i|
@@ -66,8 +68,8 @@ class ConnectFour
 		count = 0
 		diagonal_row = $row
     diagonal_column = column
-    
-    while diagonal_row > 0 && diagonal_column < 6
+    print diagonal_row,diagonal_column
+    while diagonal_row > 6 && diagonal_column < 6
       diagonal_row = diagonal_row -1
       diagonal_column = diagonal_column + 1
     end
@@ -89,23 +91,25 @@ class ConnectFour
 		count = 0
 		diagonal_row = $row
     diagonal_column = column
-    
-    while diagonal_row < 6 && diagonal_column < 6
-      diagonal_row = diagonal_row + 1
-      diagonal_column = diagonal_column +1
-    end
-    while diagonal_row != 7 && diagonal_column >= 0
-      if $board[diagonal_row][diagonal_column] == player_char
-        count = count + 1
-      else
-        count = 0
-      end
-      diagonal_row = diagonal_row - 1
-      diagonal_column = diagonal_column - 1
-      if count == 4
-        display_winner(player)
-      end
-    end
+    print diagonal_row,diagonal_column
+    if diagonal_row < 6 && diagonal_column < 6
+	    while diagonal_row < 6 && diagonal_column < 6
+	      diagonal_row = diagonal_row + 1
+	      diagonal_column = diagonal_column +1
+	    end
+	    while diagonal_row != 7 && diagonal_column >= 0 
+	      if $board[diagonal_row][diagonal_column] == player_char
+	        count = count + 1
+	      else
+	        count = 0
+	      end
+	      diagonal_row = diagonal_row - 1
+	      diagonal_column = diagonal_column - 1
+	      if count == 4
+	        display_winner(player)
+	      end
+	    end
+	  end
   end
 
 	def display_winner(player)
