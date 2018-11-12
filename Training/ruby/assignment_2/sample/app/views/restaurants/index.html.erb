@@ -1,0 +1,32 @@
+<body>
+  <div class="container">
+  	<h3>Restaurant Details</h3>
+    <span class="col-md-6">
+      <%= button_to 'Add Restaurants',new_restaurant_path,method: :get  %>
+    </span>
+    <br></br>
+
+    <div class="container">
+      <% @restaurant.each do |restaurant| %>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <p> <%= restaurant.name%></p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <p> <%= image_tag restaurant.avatar.url, :size => "260x180", :crop => :fill%> </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <p><%= button_to 'Add Dish', new_restaurant_dish_path(restaurant),method: :get%></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+    
+</body>

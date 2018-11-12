@@ -1,0 +1,17 @@
+<body>
+  <div>
+    <% current_user.addresses.all.each do |user| %>
+      <ul>
+        <li>
+        <%= user.street%>
+        <%= user.landmark%>
+        <%= user.city%>
+        <%= user.zipcode%>
+        <%= user.state%>
+        <%= user.country%>
+       </li>
+      </ul>
+    <% end %>
+    <%= button_to 'Add Addresses',new_address_path  %>
+  </div>
+</body>

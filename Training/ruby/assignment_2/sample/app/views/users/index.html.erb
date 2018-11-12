@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all',
+                                              'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <br></br>
+      <% if logged_in %>
+        <div class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
+          <div class="panel-body">
+            <h3><%= current_user.name %></h3>
+            <p>
+              <%= current_user.phone %>  .  <%= current_user.email %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+      <br></br>
+      <% Restaurant.all.each do |restaurant| %>
+      <div class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
+        <tr>
+          <div class="col-md-3">
+            <td><%= restaurant.name%></td>
+          </div>
+          <div class="col-md-3">
+            <td><%= image_tag restaurant.avatar.url%></td>
+          </div>
+        </tr>
+      </div>
+    <% end %>
+  </body>
+</html>

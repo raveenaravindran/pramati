@@ -1,0 +1,19 @@
+<div class="container">
+  <h3>Dishes</h3>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for(@dish,url:restaurant_dishes_path) do |f| %>
+      	<%= f.label :name %>
+      	<br></br>
+        <%= f.text_field :name %>
+        <br></br>
+
+        <%= f.label :price %>
+        <br></br>
+        <%= f.text_field :price %>
+        <br></br>
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
