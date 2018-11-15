@@ -1,21 +1,25 @@
-#RVM?
-RVM is a command-line tool which allows you to easily install, manage, and work with multiple ruby environments from interpreters to sets of gems.
+# RVM?
+
+- Ruby Version Manager abbreviated as RVM.
+- RVM is a command-line tool which allows you to easily install, manage, and work with multiple ruby environments from interpreters to sets of gems.
 
 **Install RVM**
 
 ```sudo apt-get install rvm```
 
-- Change the terminal window
-	edit --> profile preferences --> commands --> run command as login shell.
+**Change the terminal window**
+
+- Edit --> Profile Preferences --> Commands --> Run command as login shell.
 
 **Install ruby**
-	rvm install ruby
 
-#Gemset?
+```rvm install ruby```
+
+# Gemset?
 
 - Gemset gives you the privilege of creating set of gems specific to your particular rails application.
-- Gemset is basically set of gems collected together
-- These set of gems collected together can be used for the development of your particular application
+- Gemset is basically set of gems collected together.
+- These set of gems collected together can be used for the development of your particular application.w
 - When you install particular Ruby using RVM then it comes with 2 gemsets. viz. default and global.
 
 **Creating gemset**
@@ -37,3 +41,4 @@ RVM is a command-line tool which allows you to easily install, manage, and work 
 **To delete gemset**
 
 ```rvm gemset delete gemset_name```
+
