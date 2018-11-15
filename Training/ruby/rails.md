@@ -84,4 +84,66 @@ This will create a migration file and after doing the db migration it will add t
 	- rename_column
 	- rename_index
 	- rename_table
+-  To rollback to last migration
+```
+rails db:rollback
+```
+- To run specific migration
+```
+rails db:migrate VERSION=20080906120000
+```
+
+## Validations
+
+- Validations are used to ensure that only valid data is saved into your database. 
+- Active Record offers many pre-defined validation helpers that you can use directly inside your class definitions.
+- These helpers provide common validation rules.
+	- **confirmation** : Use to confirm the changes
+	- **numericality** : To check the numericality of the input
+	- **length** : To check the length of the input
+	- **presence** : Checks the presence
+	- **absence**: Checks the absence
+	-	**uniqueness** : Checks the uniqueness
+
+## Callbacks
+
+- Callbacks are methods that get called at certain moments of an object's life cycle. 
+- With callbacks it is possible to write code that will run whenever an Active Record object is created, saved, updated, deleted, validated, or loaded from the database.
+- Availiable callbacks
+	- Creating an object
+    - before_validation
+    - after_validation
+    - before_save
+    - around_save
+    - before_create
+    - around_create
+    - after_create
+    - after_save
+    - after_commit/after_rollback
+
+	- Updating an object
+    - before_validation
+    - after_validation
+    - before_save
+    - around_save
+    - before_update
+    - around_update
+    - after_update
+    - after_save
+    - after_commit/after_rollback
+	- Destroying an object
+    - before_destroy
+    - around_destroy
+    - after_destroy
+    - after_commit/after_rollback
+
+## Associations
+-  An association is a connection between two Active Record models.
+- Types of assoications availiable
+	- belongs_to
+	- has_one
+	- has_many
+	- has_many :through
+	- has_one :through
+	- has_and_belongs_to_many
 
