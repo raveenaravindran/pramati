@@ -8,9 +8,11 @@
 ```sudo apt-get install rvm```
 
 **Change the terminal window**
+
 - Edit --> Profile Preferences --> Commands --> Run command as login shell.
 
 **Install ruby**
+
 ```rvm install ruby```
 
 # Gemset?
