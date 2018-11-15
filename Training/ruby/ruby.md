@@ -11,8 +11,9 @@
 - Instance of class are called as objects.
 - A class in ruby is defined as
 
-``` class ClassName
-    end 
+``` 
+class ClassName
+end 
 ```
 # Variables in class
 
