@@ -34,7 +34,7 @@ end
 
 - **'==='** - Used to test equality within a when clause of a case statement.
 - **'<=>'** 
- - Combined comparison operator.
+  - Combined comparison operator.
  - Returns 0 if first operand equals second.
  - 1 if first operand is greater than the second.
  - -1 if first operand is less than the second.
