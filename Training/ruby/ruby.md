@@ -11,8 +11,9 @@
 - A class is the blueprint from which individual objects are created. 
 - Instance of class are called as objects.
 - A class in ruby is defined as
-```class ClassName
-end```
+```class ClassName 
+   end
+```
 # Variables in class
 
 	- **Local Variables** - They are the variables that are defined in a method and are not availiable outside that method.They always begins with small letter or '_'.
