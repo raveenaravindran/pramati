@@ -5,7 +5,7 @@
 - To run a program
 ``` ruby filename.rb```
 
-# Classes and Objects
+## Classes and Objects
 
 - A class is the blueprint from which individual objects are created. 
 - Instance of class are called as objects.
@@ -16,21 +16,21 @@ class ClassName
 end 
 ```
 
-# Variables in class
+## Variables in class
 
 - **Local Variables** - They are the variables that are defined in a method and are not availiable outside that method.They always begins with small letter or '_'.
 - **Instance Variables** - They are available across methods for any particular instance or object.They are preceded by the at sign (@) followed by the variable name.
 - **Class Variables** - A class variable belongs to the class and is a characteristic of a class. They are preceded by the sign @@ and are followed by the variable name.
 - **Global Variables** - Global variables are availiable across the class.The global variables are always preceded by the dollar sign ($).
 
-# Objects
+## Objects
 
 - Objects are instances of the class.
 - Ruby uses new method to create an object.
 
 ``` obj = ClassName.new ```
 
-# Operators
+## Operators
 
 - **'==='** - Used to test equality within a when clause of a case statement.
 - **'<=>'** 
@@ -41,7 +41,7 @@ end
 - **.eql?** - True if the receiver and argument have both the same type and equal values.
 - **equal** - True if the receiver and argument have the same object id.
  
-# Ruby if...else Statement
+## Ruby if...else Statement
 
 - if expressions are used for conditional execution. 
 - The values false and nil are false, and everything else are true.
@@ -59,7 +59,7 @@ end
 
 ```
 
-# Ruby unless Statement
+## Ruby unless Statement
 
 - Executes code if condition is false. If the condition is true, code in the else clause is executed.
 
@@ -72,7 +72,7 @@ end
 
 ```
 
-# Ruby while Statement
+## Ruby while Statement
 
 - Executes code while condition is true.
 
@@ -82,7 +82,7 @@ while conditional [do]
 end
 ```
 
-# Ruby While modifier
+## Ruby While modifier
 
 - Executes code while condition is true.
 
@@ -96,7 +96,7 @@ begin
   code 
 end while conditional
 ```
-# Ruby until Statement
+## Ruby until Statement
 
 - Executes code while condition is false.
 
@@ -105,7 +105,7 @@ until conditional [do]
    code
 end
 ```
-# Ruby until modifier
+## Ruby until modifier
 
 - Executes code while condition is false.
 
@@ -119,7 +119,7 @@ begin
    code
 end until conditional
 ```
-# Ruby For statement
+## Ruby For statement
 
 - Executes code once for each element in expression.
 ```
@@ -128,12 +128,12 @@ for variable [, variable ...] in expression [do]
 end
 ```
 
-# Ruby Next statement
+## Ruby Next statement
 
 - Jumps to the next iteration of the most internal loop.
 - Terminates execution of a block if called within a block.
 
-# Ruby methods
+## Ruby methods
 
 - Method names should begin with a lowercase letter.
 - Method can accept parameters and also it is possible to set default values for the parameters.
