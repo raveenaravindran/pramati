@@ -1,11 +1,11 @@
 #RVM?
-RVM is a command-line tool which allows you to easily install, manage, and work with multiple ruby environments from interpreters to sets of gems.
+- RVM is a command-line tool which allows you to easily install, manage, and work with multiple ruby environments from interpreters to sets of gems.
 
 **Install RVM**
 
 ```sudo apt-get install rvm```
 
-- Change the terminal window
+**Change the terminal window**
 	edit --> profile preferences --> commands --> run command as login shell.
 
 **Install ruby**
