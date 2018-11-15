@@ -8,7 +8,7 @@
 ```sudo apt-get install rvm```
 
 **Change the terminal window**
-- edit --> profile preferences --> commands --> run command as login shell.
+- Edit --> Profile Preferences --> Commands --> Run command as login shell.
 
 **Install ruby**
 ```rvm install ruby```
