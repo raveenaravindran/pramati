@@ -10,6 +10,7 @@
 - A class is the blueprint from which individual objects are created. 
 - Instance of class are called as objects.
 - A class in ruby is defined as
+
 ```class ClassName
    end 
 ```
@@ -21,8 +22,8 @@
 - **Global Variables** - Global variables are availiable across the class.The global variables are always preceded by the dollar sign ($).
 
 # Objects
--Objects are instances of the class.
--Ruby uses new method to create an object.
+- Objects are instances of the class.
+- Ruby uses new method to create an object.
 
 ``` obj = ClassName.new ```
 
