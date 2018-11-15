@@ -1,6 +1,9 @@
 class User < ApplicationRecord
 
 	has_secure_password
+	has_many :roles
+	belongs_to :carts
+	belongs_to :cart_items
 	validates :name,  presence: true, length: { maximum: 50 }
   validates :phone, presence: true, length: { minimum: 10 }, numericality: { only_integer: true }
  
