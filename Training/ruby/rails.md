@@ -120,7 +120,6 @@ rails db:migrate VERSION=20080906120000
     - after_create
     - after_save
     - after_commit/after_rollback
-
 	- Updating an object
     - before_validation
     - after_validation
