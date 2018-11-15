@@ -32,12 +32,12 @@ end
 
 # Operators
 
-**===** - Used to test equality within a when clause of a case statement.
-**<=>** 
-	- Combined comparison operator.
-	- Returns 0 if first operand equals second.
-	- 1 if first operand is greater than the second.
-	- 1 if first operand is less than the second.
+**'==='** - Used to test equality within a when clause of a case statement.
+**'<=>'** 
+- Combined comparison operator.
+- Returns 0 if first operand equals second.
+- 1 if first operand is greater than the second.
+- -1 if first operand is less than the second.
 **.eql?** - True if the receiver and argument have both the same type and equal values.
 **equal** - True if the receiver and argument have the same object id.
  
@@ -113,11 +113,12 @@ end
 code until conditional
 ```
 OR
+
 ```
 begin
    code
 end until conditional
-
+```
 # Ruby For statement
 
 - Executes code once for each element in expression.
