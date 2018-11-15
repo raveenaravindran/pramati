@@ -109,8 +109,8 @@ rails db:migrate VERSION=20080906120000
 
 - Callbacks are methods that get called at certain moments of an object's life cycle. 
 - With callbacks it is possible to write code that will run whenever an Active Record object is created, saved, updated, deleted, validated, or loaded from the database.
-- Availiable callbacks
-	- Creating an object
+
+- Callbacks for creating an object
     - before_validation
     - after_validation
     - before_save
@@ -120,7 +120,7 @@ rails db:migrate VERSION=20080906120000
     - after_create
     - after_save
     - after_commit/after_rollback
-	- Updating an object
+- Callbacks for updating an object
     - before_validation
     - after_validation
     - before_save
@@ -130,7 +130,7 @@ rails db:migrate VERSION=20080906120000
     - after_update
     - after_save
     - after_commit/after_rollback
-	- Destroying an object
+- Callbacks for destroying an object
     - before_destroy
     - around_destroy
     - after_destroy
