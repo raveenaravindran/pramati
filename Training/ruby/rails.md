@@ -14,7 +14,7 @@ rails new application_name
 rails server or rails s
 ```
 
-### File/Folders in new created application
+### File/Folders in application
 
 - app/ : Contains the controllers, models, views, helpers, mailers and assets for your application.
 - config/ : Configure your application's routes, database, and more.
@@ -25,10 +25,11 @@ rails server or rails s
 
 - It coordinates the interaction between the user, the views, and the model.
 - To create a controller use command
-- The naming convention of controllers in Rails favors pluralization of the last word in the controller's name.
+
 ```
 rails g controller controller_name actions
 ```
+- The naming convention of controllers in Rails favors pluralization of the last word in the controller's name.
 - Various methods used
 	- **new** : It is used to create a new object.This method is called when you will display a page which takes an user input.
 	- **create** : It is used to create record in the database.
@@ -59,7 +60,7 @@ rails routes
 - These common operations are referred to by the acronym CRUD--Create, Remove, Update, Destroy.
 - Models are created using the command
 ```
-    rails g model ModelName ColumnOneName:ColumnOneType ColumnTwoName:ColumnTwoType
+rails g model ModelName ColumnOneName:ColumnOneType ColumnTwoName:ColumnTwoType
 ```
 - To create the table and update the schema use command
 ```
