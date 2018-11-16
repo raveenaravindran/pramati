@@ -1,0 +1,16 @@
+<h3>Restaurant Details</h3>
+<%= button_to 'Add Restaurants',new_restaurant_path,method: :get  %>
+<br></br>
+<% Restaurant.all.in_groups_of(4, false) do |group| %>
+  <div class="row">
+    <% group.each do |restaurant| %>
+    <div class="col-md-3">
+      <div class="img-thumbnail">
+        <%= image_tag restaurant.avatar.url, :size => "240x180", :crop => :fill %>
+        <h4 class="align-middle"><%= restaurant.name%></h4>
+        <p><%= button_to 'Add Dish', new_restaurant_dish_path(restaurant),method: :get%></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+<% end %>
