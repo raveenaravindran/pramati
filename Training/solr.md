@@ -1,4 +1,4 @@
-**Solr**
+#Solr
 
 - Apache Solr is a fast open-source Java search server.
 - It helps us in finding the required information from such a large source.
