@@ -1,0 +1,37 @@
+<h3>Address</h3>
+<div class="row">
+  <div class="col-md-6">
+    <%= form_for(@address, url:address_index_path) do |f| %>
+    	<%= f.label :street %>
+    	<br></br>
+      <%= f.text_field :street %>
+      <br></br>
+
+      <%= f.label :landmark %>
+      <br></br>
+      <%= f.text_field :landmark %>
+      <br></br>
+
+      <%= f.label :city %>
+      <br></br>
+      <%= f.text_field :city %>
+      <br></br>
+
+      <%= f.label :zipcode %>
+      <br></br>
+      <%= f.text_field :zipcode %>
+      <br></br>
+      <%= f.label :state %>
+      <br></br>
+      <%= f.text_field :state %>
+      <br></br>
+
+      <%= f.label :country %>
+      <br></br>
+      <%= f.text_field :country %>
+      <br></br>
+      
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

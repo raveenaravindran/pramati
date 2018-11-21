@@ -1,0 +1,12 @@
+<h3>Cart Details</h3>
+<table class="table table-bordered">
+  <th>Dish Name</th>
+  <th>Price</th>
+  <th>Quantity</th>
+  <% @dish.all.each do |dish| %>
+  <tr>
+    <td><%= dish.name%></td>
+    <td><%= dish.price%></td>
+</tr>
+<% end %>
+</table>

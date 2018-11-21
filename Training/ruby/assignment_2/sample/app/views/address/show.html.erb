@@ -1,0 +1,21 @@
+<table class="table table-bordered">
+  <tr>
+    <th>Street</th>
+    <th>Landmark</th>
+    <th>City</th>
+    <th>Zipcode</th>
+    <th>State</th>
+    <th>Country</th>
+  </tr>
+  <% current_user.addresses.all.each do |user| %>
+      <tr>
+      <td><%= user.street%></td>
+      <td><%= user.landmark%></td>
+      <td><%= user.city%></td>
+      <td><%= user.zipcode%></td>
+      <td><%= user.state%></td>
+      <td><%= user.country%></td>
+     </tr>
+  <% end %>
+</table>
+<%= button_to 'Add Addresses',new_address_path(current_user), method: :get  %>

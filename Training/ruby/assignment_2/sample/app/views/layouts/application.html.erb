@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Swiggy</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<!--     <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' %>
+ -->
+     <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" %>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head> 
+  <body>
+    <header>
+      <div class="container">
+         <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <p class="navbar-brand"><%= link_to "Swiggy", root_path %></p>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><p class="navbar-brand"><%= link_to "Search", '#' %></p></li>
+              <li><p class="navbar-brand"><%= link_to "Help", '#' %></p></li>
+              <li><p class="navbar-brand"><%= link_to "Cart", cart_items_path %></p></li>
+              <% if logged_in %>
+                <li>
+                  <p class="navbar-brand"><%= link_to current_user.name, user_path(current_user.id) %></p>
+                </li>
+                <% if current_user.check_admin? %>
+                <li class="nav-item">
+                  <p class="navbar-brand"><%= link_to 'Admin', admins_index_path %></p>
+                </li>
+                <% end %>
+                <li class="nav-item">
+                    <p class="navbar-brand"><%= link_to "Log out", logout_path, method: :delete %></p>
+                  </li>
+              <% else %>
+                <p class="navbar-brand"><%= link_to "Sign In", login_path %></p>
+              <% end %>
+              
+            </ul>
+          </div>
+        </nav> 
+      </div>
+    </header>
+    <body>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </body>
+  </body>
+</html>
