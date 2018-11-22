@@ -18,11 +18,10 @@
 
 **Generate new SSH key**
 
--In terminal run the command
-	```
-	ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-
-	```
+- In terminal run the command
+```
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
 - It creates a new ssh key, using the provided email as a label.
 - When you're prompted to "Enter a file in which to save the key," press Enter. This accepts the default file location.
 - At the prompt, type a secure passphrase.
