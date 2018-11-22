@@ -31,10 +31,8 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
 - Copy the ssh key to clipboard
 	- Can do using command after installing the xclip
-	```> sudo apt-get install xclip
-
-		 > xclip -sel clip < ~/.ssh/id_rsa.pub
-	```
+	```sudo apt-get install xclip```
+	``` xclip -sel clip < ~/.ssh/id_rsa.pub```
 - Login to your github account
 	- Go to settings
 	- Select SSH and GPG keys. 
