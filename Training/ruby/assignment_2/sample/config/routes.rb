@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'admins/index'
   get 'carts/add_item'
   post 'carts/add_item'
+  get 'carts/reset_cart'
+  post 'carts/reset_cart'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
 
