@@ -1,5 +1,22 @@
+<script>
+$(document).ready(function() {
+  $('#cart_count').click(function() {
+    $.ajax({
+        data: {
+        count: $('#cart_count').text(),
+       },
+      datatype: "script"
+    });
+  });
+});
+</script>
+ 
+
 <tr>
   <td><%= dish.name%></td>
   <td><%= dish.price%></td>
-  <td><%= button_to 'Add to Cart',carts_add_item_path(dish_id: dish.id,restaurant_id: @restaurant)%></td>
+  <td>
+    <%= button_to 'Add to cart',carts_add_item_path(dish_id: dish.id,restaurant_id: @restaurant)%> 
+  </td>
+
 </tr>

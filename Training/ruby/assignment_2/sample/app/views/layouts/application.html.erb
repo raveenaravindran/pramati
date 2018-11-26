@@ -25,7 +25,7 @@
             <ul class="nav navbar-nav navbar-right">
               <li class="active"><p class="navbar-brand"><%= link_to "Search", '#' %></p></li>
               <li><p class="navbar-brand"><%= link_to "Help", '#' %></p></li>
-              <li><p class="navbar-brand"><%= link_to "Cart", cart_items_path %></p></li>
+              <li><p class="navbar-brand "><%= link_to "Cart", cart_items_path %></p></li>
               <% if logged_in %>
                 <li>
                   <p class="navbar-brand"><%= link_to current_user.name, user_path(current_user.id) %></p>

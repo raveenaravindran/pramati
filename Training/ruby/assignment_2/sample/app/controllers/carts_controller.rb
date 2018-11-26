@@ -29,11 +29,10 @@ class CartsController < ApplicationController
     @cart = current_user.cart
     @dish = Dish.find(params[:dish_id])
     @restaurant = Restaurant.find(params[:restaurant_id])
-
     if @cart
       if @cart.restaurant_id.nil?
-        cart_restaurant = Cart.update(@cart.id,restaurant_id: @restaurant.id)
-        cart_restaurant.save
+        binding.pry
+        update_restaurant
       else
         if @cart.restaurant_id == @restaurant.id
           cart_item = @cart.cart_items.create(dish_id: @dish.id)
