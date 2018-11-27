@@ -25,4 +25,14 @@ class CartItemsController < ApplicationController
     #   end
     # end
   end
+
+  def increase_quantity
+    cart_restaurant = self.update_attributes(quantity: self.quantity+1)
+    cart_restaurant.save
+  end
+
+  def decrease_quantity
+    cart_restaurant = self.update_attributes(quantity: self.quantity-1)
+    cart_restaurant.save
+  end
 end

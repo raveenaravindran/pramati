@@ -1,22 +1,53 @@
 <script>
 $(document).ready(function() {
-  $('#cart_count').click(function() {
+  var valueNow = $(this).val();
+  alert(valueNow);
+  $("#inc_button").on("click", function(event) {
+    event.preventDefault();
+    var previousVal = $('#count').val();
+    $('#count').val(previousVal + 1);
+
     $.ajax({
-        data: {
-        count: $('#cart_count').text(),
-       },
-      datatype: "script"
+      url: "carts/add_item",
+      type: "POST",
+      data: {quantity: $('input#count').val()}
+      success: function(response){
+        console.log(response)
+        $('#count').html(response);
+      }
     });
   });
-});
+
+  $("#dec_button").on("click", function(event) {
+    event.preventDefault();
+    if (valueNow > 0) {
+      var previousVal = $('#count').val();
+      $('#count').val(previousVal - 1);
+    }
+    $.ajax({
+    url: "carts/add_item",
+    type: "POST",
+    data: {quantity: $("input#count").val()}
+    success: function(response){
+        console.log(response)
+        $('#count').html(response);
+    }
+    });
+  });
 </script>
  
-
 <tr>
   <td><%= dish.name%></td>
   <td><%= dish.price%></td>
   <td>
-    <%= button_to 'Add to cart',carts_add_item_path(dish_id: dish.id,restaurant_id: @restaurant)%> 
+    <%= link_to restaurants_path, remote: true do %>
+      <button class="btn btn-primary" id="inc_button" value="+">+</button>
+    <% end %>
+    <div id="count">
+      <%= text_field_tag :quantity,0,:size=>"2" %> 
+    </div>
+    <%= link_to restaurants_path, remote: true do %>
+      <button class="btn btn-primary" id="dec_button"value="-">-</button>
+    <% end %>
   </td>
-
 </tr>

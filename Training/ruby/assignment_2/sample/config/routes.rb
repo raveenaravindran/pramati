@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
+  resource :carts
   post 'carts/create'
   get 'carts/add_item'
   post 'carts/add_item'
-
   get 'carts/reset_cart'
   post 'carts/reset_cart'
   post 'carts/show'
@@ -12,11 +12,11 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
+  post 'restaurants/show'
   
   resources :address
   resources :users
   resources :admins
-  resource :carts
   resource :cart_items  
   resources :restaurants do
     resources :dishes

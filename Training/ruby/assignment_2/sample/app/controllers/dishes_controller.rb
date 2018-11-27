@@ -27,8 +27,4 @@ class DishesController < ApplicationController
 		params.require(:dish).permit(:name, :price)
 	end
 
-  def calculate_count
-
-  end
-
 end
