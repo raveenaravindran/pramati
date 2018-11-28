@@ -31,8 +31,9 @@ class CartsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
 
     respond_to do |format|
-      format.js
-      format.html
+      format.js  { render action: 'add_item' }
+      format.html { redirect_to(restaurant_path(@restaurant)) }
+      format.json
     end
     if @cart
       if @cart.restaurant_id.nil?

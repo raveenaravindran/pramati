@@ -4,3 +4,45 @@
   <th>Price</th>
   <th><%= render @restaurant.dishes%></th>
 </div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  alert('valueNow');
+  // var valueNow = $(this).val();
+  
+  $("#inc_button").click(function() {
+    // event.preventDefault();
+    alert('1111111111111111111111111111');
+    var previousVal = $('#count').val();
+    $('#count').val(previousVal + 1);
+
+    $.ajax({
+      url: "carts/add_item",
+      type: "POST",
+      dataType:'json',
+      data: {quantity: $('input#count').val()},
+      success: function(response){
+        console.log(response);
+        $('#count').html(response);
+      }
+    });
+  });
+
+  // $("#dec_button").click(function(event) {
+  //   event.preventDefault();
+  //   if (valueNow > 0) {
+  //     var previousVal = $('#count').val();
+  //     $('#count').val(previousVal - 1);
+  //   }
+  //   $.ajax({
+  //   url: "carts/add_item",
+  //   type: "POST",
+  //   data: {quantity: $("input#count").val()}
+  //   success: function(response){
+  //       console.log(response)
+  //       $('#count').html(response);
+  //   }
+  //   });
+  // });
+});  
+</script>
