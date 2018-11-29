@@ -18,6 +18,16 @@ require 'rails_helper'
     it { expect validate_uniqueness_of(:email) }
   end
 
-  describe '#check_admin?' do
+  # describe User, 'relations' do
+  #   it { should has_and_belongs_to_many : roles }
+  #   it { should has_many : addresses }
+  #   it { should has_one : cart }
+  #   it { should has_many : cart_items, through: :cart }
+  # end
 
+  describe User,'#check_admin?' do
+    it 'check admin user' do
+      # user = User.new
+      expect(user.roles.map(&:name).to eq 'admin')
+  end
   end
