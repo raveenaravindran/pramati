@@ -4,9 +4,6 @@ FactoryBot.define do
     email "john@example.com"
     password "pw"
   end
-end
-
-FactoryBot.define do
   factory :roles do
     name "admin"
   end
