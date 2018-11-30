@@ -25,9 +25,34 @@ require 'rails_helper'
   #   it { should has_many : cart_items, through: :cart }
   # end
 
-  describe User,'#check_admin?' do
-    it 'check admin user' do
-      # user = User.new
-      expect(user.roles.map(&:name).to eq 'admin')
+  describe User do
+    describe '#check_admin?' do
+      context 'if an admin' do
+        it 'check admin user' do
+          expect(user.roles.name.to eq 'admin')
+        end
+      end
+      context 'if not an admin' do
+        it 'check admin user' do
+          expect(user.roles.name.not_to eq 'admin')
+        end
+      end
+    end
   end
-  end
+
+
+  # describe User do
+
+  #   let(:user) { FactoryBot.create(:user) }
+  #   before do
+  #     @user = User.new(name: user.name,phone: user.phone,email: user.email,password: user.password)
+  #   end
+
+  #   subject { @user }
+  #   it { should be_valid }
+
+  #   describe "when user_id is not present" do
+  #     before { @user.user_id = nil }
+  #     it { should_not be_valid }
+  #   end
+# end
