@@ -47,4 +47,8 @@ PostgreSQL is a powerful, open source object-relational database system that use
  ```
   INSERT INTO TABLE_NAME VALUES (value1,value2,value3,...valueN);
  ```
+ - To on the expanded display
+ ```
+	\x
+ ```
 
