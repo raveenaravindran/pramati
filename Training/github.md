@@ -29,4 +29,4 @@ After installing create an github account.Then create a new repository.Along wit
 6. **git push origin master** - To push all the committed datas or modifications to the remote repository.
 7. **git remote set-url origin [repo-url]** - To create 'origin' if it doesnt exist,we can use the set-url subcommand to edit an existing remote.
 8. **git commit --amend** - Used to change the last commited message.
-![sample_image](/home/raveena/Downloads/index.png)
+![sample_image](/home/raveena/pramati/Training/index.png)
