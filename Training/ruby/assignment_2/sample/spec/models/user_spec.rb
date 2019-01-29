@@ -4,19 +4,19 @@ require 'rails_helper'
 #   pending "add some examples to (or delete) #{__FILE__}"
 # end
 
-  describe User, 'validation' do
-    it { should validate_presence_of(:name) }
-    it { should validate_presence_of(:phone) }
-    it { should validate_presence_of(:password) }
-    it { should validate_presence_of(:email) }
+  # describe User, 'validation' do
+  #   it { should validate_presence_of(:name) }
+  #   it { should validate_presence_of(:phone) }
+  #   it { should validate_presence_of(:password) }
+  #   it { should validate_presence_of(:email) }
 
-    it { should validate_length_of(:password).is_at_least(6).is_at_most(20)}  
-    it { should validate_length_of(:name).is_at_most(50)}
-    it { should validate_length_of(:phone).is_at_least(10)}
+  #   it { should validate_length_of(:password).is_at_least(6).is_at_most(20)}  
+  #   it { should validate_length_of(:name).is_at_most(50)}
+  #   it { should validate_length_of(:phone).is_at_least(10)}
 
-    it { should validate_numericality_of(:phone).only_integer}
-    it { expect validate_uniqueness_of(:email) }
-  end
+  #   it { should validate_numericality_of(:phone).only_integer}
+  #   it { expect validate_uniqueness_of(:email) }
+  # end
 
   # describe User, 'relations' do
   #   it { should has_and_belongs_to_many : roles }
@@ -26,15 +26,21 @@ require 'rails_helper'
   # end
 
   describe User do
+  
+    let(:user) { create(:user) }
+    let(:role) { create(:role) }
+    let(:roles_users) { create(:roles_users, role_id: role.id, user_id: user.id) }
     describe '#check_admin?' do
       context 'if an admin' do
         it 'check admin user' do
-          expect(user.roles.name.to eq 'admin')
+          user_role_name = roles_users.name
+          expect(user_role_name).to eql('admin') 
         end
       end
       context 'if not an admin' do
         it 'check admin user' do
-          expect(user.roles.name.not_to eq 'admin')
+          user_role_name = roles_users.name
+          expect(user_role_name).not_to eq('admin')
         end
       end
     end

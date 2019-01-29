@@ -7,15 +7,11 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-  alert('valueNow');
-  // var valueNow = $(this).val();
-  
   $("#inc_button").click(function() {
-    // event.preventDefault();
-    alert('1111111111111111111111111111');
-    var previousVal = $('#count').val();
-    $('#count').val(previousVal + 1);
-
+    var valueNow = $('#count').val();
+    var newValue = parseInt(valueNow)+1;
+    debugger
+    $('#count').val(newValue);
     $.ajax({
       url: "carts/add_item",
       type: "POST",

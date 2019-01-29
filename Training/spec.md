@@ -35,3 +35,6 @@
 	- Use . (or ::) for referring to a class method's name 
 	- Use # when referring to an instance method's name. 
 
+** Factory Girl**
+
+- 

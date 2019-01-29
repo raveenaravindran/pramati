@@ -11,6 +11,4 @@ class User < ApplicationRecord
   before_save { self.email = email.downcase }
   validates :email, presence: true, format: { with: /[a-zA-Z._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{1,4}/i }, uniqueness: true, case_sensitive: false
 
-
-
 end

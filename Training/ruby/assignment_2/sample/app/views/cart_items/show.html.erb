@@ -2,11 +2,13 @@
 <table class="table table-bordered">
   <th>Dish Name</th>
   <th>Price</th>
+  <th>Quantity</th>
   <tbody>
     <% if @dish %>
       <tr>
         <td><%= @dish.name%></td>
-        <td><%= @dish.price%></td>   
+        <td><%= @dish.price%></td> 
+        <td><%= @dish.quantity%></td> 
       </tr>
   <% end %>
   <tbody>
