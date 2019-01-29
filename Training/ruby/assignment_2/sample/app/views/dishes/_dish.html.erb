@@ -1,15 +1,10 @@
 
- 
 <tr>
   <td><%= dish.name%></td>
   <td><%= dish.price%></td>
   <td>
     <%= link_to "+", restaurants_path, id: "inc_button", remote: true %>
-
-    <div id="count">
-      <%= text_field_tag :quantity,0,:size=>"2" %> 
-    </div>
+    <%= text_field_tag :quantity,0,:size=>"2", id: "count" %> 
     <%= link_to "-", restaurants_path, id: "dec_button", remote: true %>
-
   </td>
 </tr>
